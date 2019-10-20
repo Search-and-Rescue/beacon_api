@@ -1,13 +1,16 @@
 require 'rails_helper'
 
 describe "User Profile" do
+  before :each do
+    @user = create(:user)
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+  end
+  
   it "gets a user's profile" do
 
-    user = create(:user)
 
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-
-    get "/api/v1/profile", params: { "id" => "#{user.id}" }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+    get "/api/v1/profile", params: { "id" => "#{@user.id}" }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
 
     profile = JSON.parse(response.body, symbolize_names: true)
 
@@ -16,10 +19,6 @@ describe "User Profile" do
   end
 
   it "updates a user's profile" do
-
-		user = create(:user)
-
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     patch "/api/v1/profile/edit", params: { "name" => "Baxter McDog" }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
 
