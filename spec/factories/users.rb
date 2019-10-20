@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :user do
-    name { "MyString" }
+    name { "Scruffy McAnderson" }
     address { "MyString" }
     city { "MyString" }
-    state { "MyString" }
-    zip { 1 }
+    state { "CO" }
+    zip { 80904 }
     phone { "MyString" }
     email { "MyString" }
     password_digest { "MyString" }
