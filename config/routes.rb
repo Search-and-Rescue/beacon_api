@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get '/profile', to: 'users#show'
+      post'/profile/new', to: 'users#create'
       patch '/profile/edit', to: 'users#update'
     end
   end
