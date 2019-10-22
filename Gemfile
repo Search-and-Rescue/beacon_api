@@ -9,7 +9,6 @@ gem 'rails', '~> 5.2.3'
 gem 'pg', '>= 0.18', '< 2.0'
 # GraphQL Ruby Implentation
 gem 'graphql'
-# GraphQL API Visualizer
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -39,11 +38,12 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'simplecov'
   gem 'shoulda-matchers'
-  gem "graphiql-rails"
 end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
+  # GraphQL API Visualizer
+  gem "graphiql-rails"
 end
 
 
