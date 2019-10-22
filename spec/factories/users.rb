@@ -6,7 +6,7 @@ FactoryBot.define do
     state { "CO" }
     zip { 80904 }
     phone { "MyString" }
-    email { "MyString" }
+    sequence(:email) { |n| "user-#{n}@example.com" }
     password_digest { "MyString" }
     allergies { "MyString" }
     experience_level { 1 }
