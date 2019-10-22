@@ -19,11 +19,6 @@ class Mutations::UpdateUser < Mutations::BaseMutation
 
   field :user, Types::UserType, null: false
 
-  # def resolve(id:, **attributes)
-  #   User.find(id).tap do |user|
-  #     user.update!(attributes)
-  #   end
-  # end
   def resolve(**attributes)
     user = User.find(attributes[:id])
     if user.update!(attributes)
