@@ -9,8 +9,8 @@ class Mutations::CreateUser < Mutations::BaseMutation
   field :user, Types::UserType, null: false
   field :errors, [String], null: false
 
-  def resolve(name:, email:, address:, city:, state:, zip:)
-    user = User.new(name: name, email: email, address: address, city: city, state: state, zip: zip)
+  def resolve(**attributes)
+    user = User.new(attributes)
     if user.save
       {
         user: user,
