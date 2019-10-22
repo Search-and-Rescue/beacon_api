@@ -1,11 +1,11 @@
 module Types
   class UserType < Types::BaseObject
-    field :id, ID, null: false
+    field :id, Integer, null: false
     field :name, String, null: false
     field :address, String, null: false
     field :city, String, null: false
     field :state, String, null: false
-    field :zip, Integer, null: true
+    field :zip, Integer, null: false
     field :phone, String, null: true
     field :email, String, null: false
     field :password_digest, String, null: true

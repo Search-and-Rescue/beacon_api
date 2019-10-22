@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :trips
-  
+
   validates :email, uniqueness: true, presence: true
   validates :state, presence: true, length: { is: 2 }
   validates :zip, presence: true, numericality: true, length: { is: 5 }
