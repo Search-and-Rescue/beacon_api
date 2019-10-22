@@ -59,9 +59,11 @@ describe "User Profile" do
   end
 
   it "updates a user's profile" do
+    user = create(:user)
     mutation = (
       %(mutation {
         updateUser(input: {
+          id: #{user.id}
           name: "Tyler",
           email: "tyler@gmail.com",
           address: "123 Rocky Rd",
@@ -80,7 +82,7 @@ describe "User Profile" do
     )
     post "/graphql", params: { "query" => mutation }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
 
-    profile = JSON.parse(response.body, symbolize_names: true)[:data][:createUser][:user]
+    profile = JSON.parse(response.body, symbolize_names: true)[:data][:updateUser][:user]
 
     expect(response).to be_successful
     expect(profile[:id].to_i).to eq(User.last.id)
