@@ -15,17 +15,9 @@ module Types
       User.find(id)
     end
 
-    field :trips, [Types::TripType], null: true do
-      description "Get all Trips"
-    end
-
     field :trip, Types::TripType, null: true do
       description "Find a trip by id"
       argument :id, ID, required: true
-    end
-
-    def trips
-      Trip.all
     end
 
     def trip(id:)
