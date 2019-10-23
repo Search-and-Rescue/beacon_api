@@ -53,7 +53,7 @@ RSpec.describe Types::QueryType do
       )
 
       updated_user = SearchAndRescueApiSchema.execute(mutation).as_json['data']['updateUser']['user']
-      expect(updated_user['id']).to eq(user.id)
+      expect(updated_user['id'].to_i).to eq(user.id)
       expect(updated_user['name']).to eq("Billy")
       expect(updated_user['email']).to eq("billy@gmail.com")
     end
