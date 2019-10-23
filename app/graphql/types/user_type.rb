@@ -17,5 +17,6 @@ module Types
     field :skin_color, String, null: true
     field :gender, String, null: true
     field :cosar_card, Boolean, null: true
+    field :trips, [Types::TripType], null: true
   end
 end
