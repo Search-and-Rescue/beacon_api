@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :trips
+  has_many :vehicles
 
   validates :email, uniqueness: true, presence: true
   validates :state, presence: true, length: { is: 2 }
