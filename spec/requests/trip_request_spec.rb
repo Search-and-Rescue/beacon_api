@@ -43,4 +43,23 @@ describe "User's Trips'" do
     expect(response).to be_successful
     expect(trip[:name]).to eq(@trip_1.name)
   end
+
+  it "creates a trip" do
+    query = (
+      %(mutation {
+        createTrip(input: {
+          name: "Tyler's Big Adventure"
+          userId: #{@user.id}
+          }) {
+          clientMutationId
+        }
+      })
+    )
+
+    post "/graphql", params: { "query" => query }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+
+    new_trip = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to be_successful
+  end
 end
