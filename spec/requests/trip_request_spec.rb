@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "User Profile" do
+describe "User's Trips'" do
   before :each do
     @user = create(:user)
     @trip_1 = create(:trip, name: "trip 1", user_id: @user.id)
@@ -9,7 +9,7 @@ describe "User Profile" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
   end
 
-  it "returns a user's profile" do
+  it "returns a user's trips" do
     query = (
       %(query {
         user(id: #{@user.id}) {

@@ -36,7 +36,7 @@ RSpec.describe Types::QueryType do
   end
 
   describe "trips" do
-    it "should return all users" do
+    it "should return all a user's trips" do
       user = create(:user)
       create_pair(:trip, user_id: user.id)
       query = (
