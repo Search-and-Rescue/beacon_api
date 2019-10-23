@@ -10,6 +10,6 @@ FactoryBot.define do
     notification_date { end_date + 1 }
     notification_time { end_time + 1  }
     traveling_companions { rand(1..2) }
-    user { nil }
+    user
   end
 end
