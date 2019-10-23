@@ -1,20 +1,20 @@
 FactoryBot.define do
   factory :user do
-    name { "Scruffy McAnderson" }
-    address { "MyString" }
-    city { "MyString" }
-    state { "CO" }
-    zip { 80904 }
-    phone { "MyString" }
-    sequence(:email) { |n| "user-#{n}@example.com" }
-    password_digest { "MyString" }
-    allergies { "MyString" }
-    experience_level { 1 }
-    age { 1 }
-    weight { 1 }
-    hair_color { "MyString" }
-    skin_color { "MyString" }
-    gender { "MyString" }
-    cosar_card { false }
+    name { Faker::Name.unique.name }
+    address { Faker::Address.unique.street_address }
+    city { Faker::Address.unique.city }
+    state { Faker::Address.unique.state_abbr }
+    zip { Faker::Number.unique.number(digits: 5) }
+    phone { Faker::PhoneNumber.unique.cell_phone }
+    email { Faker::Internet.unique.email(name: name) }
+    password_digest { Faker::Alphanumeric.unique.alphanumeric(number: 30) }
+    allergies { Faker::Food.unique.fruits }
+    experience_level { rand(0...2) }
+    age { rand(15..100) }
+    weight { rand(100..300) }
+    hair_color { Faker::Color.unique.color_name }
+    skin_color { Faker::Color.unique.color_name }
+    gender { Faker::Color.unique.color_name }
+    cosar_card { Faker::Boolean.boolean }
   end
 end
