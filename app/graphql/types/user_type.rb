@@ -18,5 +18,6 @@ module Types
     field :gender, String, null: true
     field :cosar_card, Boolean, null: true
     field :trips, [Types::TripType], null: true
+    field :vehicles, [Types::VehicleType], null: true
   end
 end
