@@ -27,4 +27,20 @@ describe "User's Trips'" do
     expect(trips[0][:name]).to eq(@trip_1.name)
     expect(trips[1][:name]).to eq(@trip_2.name)
   end
+
+  it "returns a user's trips" do
+    query = (
+      %(query {
+        trip(id: #{@trip_1.id}) {
+          name
+        }
+      })
+    )
+    post "/graphql", params: { "query" => query }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+
+    trip = JSON.parse(response.body, symbolize_names: true)[:data][:trip]
+
+    expect(response).to be_successful
+    expect(trip[:name]).to eq(@trip_1.name)
+  end
 end
