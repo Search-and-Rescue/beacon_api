@@ -1,4 +1,5 @@
-class Mutations::CreateTrip < Mutations::BaseMutation
+class Mutations::UpdateTrip < Mutations::BaseMutation
+  argument :id, ID, required: true
   argument :user_id, ID, required: true
   argument :name, String, required: true
   argument :starting_point, String, required: false
@@ -15,7 +16,7 @@ class Mutations::CreateTrip < Mutations::BaseMutation
   field :errors, [String], null: false
 
   def resolve(**attributes)
-    trip = Trip.find(:id)
+    trip = Trip.find(attributes[:id])
     if trip.update!(attributes)
       {
         trip: trip,
