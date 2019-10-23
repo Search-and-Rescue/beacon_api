@@ -11,5 +11,6 @@ module Types
     # field :notification_date, Types::DateTimeType, null: true
     # field :notification_time, Types::DateTimeType, null: true
     field :traveling_companions, Integer, null: true
+    field :user, Types::UserType, null: false
   end
 end
