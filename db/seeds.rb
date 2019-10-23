@@ -10,19 +10,19 @@
   User.create(
     name: name,
     address: Faker::Address.unique.street_address,
-    city: Faker::Address.unique.city,
-    state: Faker::Address.unique.state_abbr,
-    zip: Faker::Number.unique.number(digits: 5),
+    city: Faker::Address.city,
+    state: Faker::Address.state_abbr,
+    zip: Faker::Number.number(digits: 5),
     phone: Faker::PhoneNumber.unique.cell_phone,
     email: Faker::Internet.unique.email(name: name),
     password_digest: Faker::Alphanumeric.unique.alphanumeric(number: 30),
-    allergies: Faker::Food.unique.fruits,
+    allergies: Faker::Food.fruits,
     experience_level: Faker::Number.between(from: 0, to: 2),
     age: rand(15..100),
     weight: rand(90..300),
-    hair_color: Faker::Color.unique.color_name,
-    skin_color: Faker::Color.unique.color_name,
-    gender: Faker::Color.unique.color_name,
+    hair_color: Faker::Color.color_name,
+    skin_color: Faker::Color.color_name,
+    gender: Faker::Color.color_name,
     cosar_card: Faker::Boolean.boolean
   )
 end

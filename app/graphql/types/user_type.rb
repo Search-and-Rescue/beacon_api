@@ -19,5 +19,6 @@ module Types
     field :cosar_card, Boolean, null: true
 
     field :emergency_contacts, [Types::EmergencyContactType], null: true
+    field :trips, [Types::TripType], null: true
   end
 end
