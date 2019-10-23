@@ -14,5 +14,15 @@ module Types
     def user(id:)
       User.find(id)
     end
+
+    # Return single emergency contact given ID
+    field :emergency_contact, Types::EmergencyContactType, null: false do
+      argument :id, ID, required: true
+    end
+
+    def emergency_contact(id:)
+      EmergencyContact.find(id)
+    end
+
   end
 end
