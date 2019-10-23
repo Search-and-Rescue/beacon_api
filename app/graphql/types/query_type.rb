@@ -15,7 +15,7 @@ module Types
       User.find(id)
     end
 
-    field :trip, [Types::TripType], null: true do
+    field :trips, [Types::TripType], null: true do
       description "Get all Trips"
     end
 
