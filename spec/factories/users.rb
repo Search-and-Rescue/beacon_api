@@ -12,9 +12,9 @@ FactoryBot.define do
     experience_level { rand(0...2) }
     age { rand(15..100) }
     weight { rand(100..300) }
-    hair_color { Faker::Color.unique.color_name }
-    skin_color { Faker::Color.unique.color_name }
-    gender { Faker::Color.unique.color_name }
+    hair_color { Faker::Color.color_name }
+    skin_color { Faker::Color.color_name }
+    gender { Faker::Color.color_name }
     cosar_card { Faker::Boolean.boolean }
   end
 end
