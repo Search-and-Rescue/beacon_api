@@ -10,6 +10,6 @@ FactoryBot.define do
     notification_date { "2019-10-20" }
     notification_time { "2019-10-20 15:39:32" }
     traveling_companions { 1 }
-    user { nil }
+    user
   end
 end
