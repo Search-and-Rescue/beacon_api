@@ -5,12 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user = User.create!(
-  name: "Bear Grylls",
-  email: "bearg@gmail.com",
-  address: "335 Cave St",
-  city: "Rocky Mountain",
-  state: "CO",
-  zip: 80220,
-  experience_level: 2
-)
+10.times do
+  name = Faker::Name.unique.name
+  User.create(
+    name: name,
+    address: Faker::Address.unique.street_address,
+    city: Faker::Address.unique.city,
+    state: Faker::Address.unique.state_abbr,
+    zip: Faker::Number.unique.number(digits: 5),
+    phone: Faker::PhoneNumber.unique.cell_phone,
+    email: Faker::Internet.unique.email(name: name),
+    password_digest: Faker::Alphanumeric.unique.alphanumeric(number: 30),
+    allergies: Faker::Food.unique.fruits,
+    experience_level: Faker::Number.between(from: 0, to: 2),
+    age: rand(15..100),
+    weight: rand(90..300),
+    hair_color: Faker::Color.unique.color_name,
+    skin_color: Faker::Color.unique.color_name,
+    gender: Faker::Color.unique.color_name,
+    cosar_card: Faker::Boolean.boolean
+  )
+end
