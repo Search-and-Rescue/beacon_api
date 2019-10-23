@@ -34,4 +34,22 @@ RSpec.describe Types::QueryType do
       expect(results['name']).to eq(user.name)
     end
   end
+
+  describe "trips" do
+    it "should return all users" do
+      user = create(:user)
+      create_pair(:trip, user_id: user.id)
+      query = (
+        %(query {
+          user(id: #{user.id}) {
+            trips {
+              name
+            }
+          }
+        })
+      )
+      trips = SearchAndRescueApiSchema.execute(query).as_json['data']['user']['trips']
+      expect(trips.length).to eq(2)
+    end
+  end
 end
