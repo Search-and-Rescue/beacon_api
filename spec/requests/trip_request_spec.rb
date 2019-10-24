@@ -28,7 +28,7 @@ describe "User's Trips'" do
     expect(trips[1][:name]).to eq(@trip_2.name)
   end
 
-  it "returns a user's trips" do
+  it "returns a single trip" do
     query = (
       %(query {
         trip(id: #{@trip_1.id}) {

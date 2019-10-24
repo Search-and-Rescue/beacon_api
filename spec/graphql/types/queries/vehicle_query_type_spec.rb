@@ -24,5 +24,25 @@ RSpec.describe Types::QueryType do
 
       expect(vehicles.length).to eq(2)
     end
+
+    it "should return a single vehicle" do
+      vehicle_1 = create(:vehicle, make: "dodge", model: "ram")
+
+      query = (
+        %(query {
+          vehicle(id: #{vehicle_1.id}) {
+            make
+            model
+            user {
+              id
+              name
+            }
+          }
+        })
+      )
+      vehicle = SearchAndRescueApiSchema.execute(query).as_json['data']['vehicle']
+      expect(vehicle['make']).to eq(vehicle_1.make)
+      expect(vehicle['model']).to eq(vehicle_1.model)
+    end
   end
 end
