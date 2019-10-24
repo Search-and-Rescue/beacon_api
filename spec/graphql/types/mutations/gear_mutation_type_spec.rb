@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Types::QueryType do
   describe "gear mutations" do
 
-    xit "should create a piece of gear" do
+    it "should create a piece of gear" do
       user = create(:user)
 
       mutation = (
@@ -20,11 +20,12 @@ RSpec.describe Types::QueryType do
       )
 
       new_gear = SearchAndRescueApiSchema.execute(mutation).as_json['data']['createGear']['gear']
+
       expect(new_gear.length).to eq(1)
-      expect(new_gear[:itemName]).to eq("JetBoil")
+      expect(new_gear['itemName']).to eq("JetBoil")
     end
 
-    xit "should update a piece of gear" do
+    it "should update a piece of gear" do
       user = create(:user)
       gear = create(:gear, user_id: user.id)
 
@@ -44,10 +45,10 @@ RSpec.describe Types::QueryType do
 
       updated_gear = SearchAndRescueApiSchema.execute(mutation).as_json['data']['updateGear']['gear']
       expect(updated_gear.length).to eq(1)
-      expect(updated_gear[:itemName]).to eq("water")
+      expect(updated_gear['itemName']).to eq("water")
     end
 
-    xit 'removes a piece of gear' do
+    it 'removes a piece of gear' do
       user = create(:user)
       gear = create(:gear, user_id: user.id)
 

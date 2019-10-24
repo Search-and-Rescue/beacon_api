@@ -49,12 +49,12 @@ describe "User's Gear" do
     expect(sleeping_bag[:itemName]).to eq(@sleeping_bag.item_name)
   end
 
-  xit "creates a piece of gear" do
+  it "creates a piece of gear" do
 
     query = (
       %(mutation {
         createGear(input: {
-          item_name: "Avalance Beacon",
+          itemName: "Avalance Beacon",
           userId: #{@user.id}
         }){
           gear {
@@ -66,13 +66,13 @@ describe "User's Gear" do
 
     post "/graphql", params: { "query" => query }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
 
-    new_gear = JSON.parse(response.body, symbolize_names: true)[:data][:createGear][:gearl]
+    new_gear = JSON.parse(response.body, symbolize_names: true)[:data][:createGear][:gear]
 
     expect(response).to be_successful
     expect(new_gear[:itemName]).to eq("Avalance Beacon")
   end
 
-  xit "updates a piece of gear" do
+  it "updates a piece of gear" do
 
     query = (
       %(mutation {
@@ -96,12 +96,12 @@ describe "User's Gear" do
     expect(updated_gear[:itemName]).to eq("0 degrees sleeping bag")
   end
 
-  xit "delete's a piece of gear" do
+  it "delete's a piece of gear" do
 
     query = (
       %(mutation {
         removeGear( input: {
-          id: #{gear.id} }){
+          id: #{@food.id} }){
           gear {
             id
             itemName
