@@ -45,5 +45,14 @@ module Types
     def vehicle(id:)
       Vehicle.find(id)
     end
+
+    field :gear, Types::GearType, null: true do
+      description "Find a gear by id"
+      argument :id, ID, required: true
+    end
+
+    def gear(id:)
+      Gear.find(id)
+    end
   end
 end
