@@ -118,4 +118,30 @@ describe "User's Vehicles" do
     expect(new_vehicle[:model]).to eq("Ram")
     expect(new_vehicle[:year]).to eq(2015)
   end
+
+  it "delete's a vehicle" do
+
+    query = (
+      %(mutation {
+          deleteVehicle( input: {
+            id: #{@vehicle_1.id} }){
+            vehicle {
+              id
+              make
+              model
+              year
+              color
+              licensePlate
+            }
+        }
+      })
+    )
+
+    post "/graphql", params: { "query" => query }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+
+    JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to be_successful
+    expect(@user.vehicles.length).to eq(1)
+  end
 end
