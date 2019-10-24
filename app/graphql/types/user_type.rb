@@ -13,6 +13,7 @@ module Types
     field :experience_level, Integer, null: true
     field :age, Integer, null: true
     field :weight, Integer, null: true
+    field :height, Integer, null: true
     field :hair_color, String, null: true
     field :skin_color, String, null: true
     field :gender, String, null: true
