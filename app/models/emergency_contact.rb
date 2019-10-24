@@ -1,5 +1,6 @@
 class EmergencyContact < ApplicationRecord
   belongs_to :user
+  has_many :trip_contacts
   has_many :trips, through: :trip_contacts
 
   validates :name,  presence: true
