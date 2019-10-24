@@ -21,12 +21,12 @@ RSpec.describe Types::QueryType do
       expect(gear.length).to eq(2)
     end
 
-    xit "should return a single piece of gear" do
-      gear = create(:gear)
+    it "should return a single piece of gear" do
+      gear_1 = create(:gear)
 
       query = (
         %(query {
-          gear(id: #{gear.id}) {
+          gear(id: #{gear_1.id}) {
             itemName
             user {
               id
@@ -36,7 +36,8 @@ RSpec.describe Types::QueryType do
         })
       )
       gear = SearchAndRescueApiSchema.execute(query).as_json['data']['gear']
-      expect(gear['item_name']).to eq(gear.item_name)
+
+      expect(gear['itemName']).to eq(gear_1.item_name)
     end
   end
 end

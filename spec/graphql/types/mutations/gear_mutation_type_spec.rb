@@ -21,7 +21,7 @@ RSpec.describe Types::QueryType do
 
       new_gear = SearchAndRescueApiSchema.execute(mutation).as_json['data']['createGear']['gear']
       expect(new_gear.length).to eq(1)
-      expect(new_gear['item_name']).to eq("JetBoil")
+      expect(new_gear[:itemName]).to eq("JetBoil")
     end
 
     xit "should update a piece of gear" do
@@ -44,7 +44,7 @@ RSpec.describe Types::QueryType do
 
       updated_gear = SearchAndRescueApiSchema.execute(mutation).as_json['data']['updateGear']['gear']
       expect(updated_gear.length).to eq(1)
-      expect(updated_gear['item_name']).to eq("water")
+      expect(updated_gear[:itemName]).to eq("water")
     end
 
     xit 'removes a piece of gear' do

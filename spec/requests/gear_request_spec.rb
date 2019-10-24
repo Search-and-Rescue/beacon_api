@@ -31,7 +31,7 @@ describe "User's Gear" do
     expect(gear[1][:itemName]).to eq(@water.item_name)
   end
 
-  xit "returns a single piece of gear" do
+  it "returns a single piece of gear" do
 
     query = (
       %(query {
@@ -43,10 +43,10 @@ describe "User's Gear" do
 
     post "/graphql", params: { "query" => query }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
 
-    sleeping_bag = JSON.parse(response.body, symbolize_names: true)[:data][:vehicle]
+    sleeping_bag = JSON.parse(response.body, symbolize_names: true)[:data][:gear]
 
     expect(response).to be_successful
-    expect(sleeping_bag[:item_name]).to eq(@sleeping_bag.item_name)
+    expect(sleeping_bag[:itemName]).to eq(@sleeping_bag.item_name)
   end
 
   xit "creates a piece of gear" do
@@ -69,7 +69,7 @@ describe "User's Gear" do
     new_gear = JSON.parse(response.body, symbolize_names: true)[:data][:createGear][:gearl]
 
     expect(response).to be_successful
-    expect(new_gear[:item_name]).to eq("Avalance Beacon")
+    expect(new_gear[:itemName]).to eq("Avalance Beacon")
   end
 
   xit "updates a piece of gear" do
@@ -93,7 +93,7 @@ describe "User's Gear" do
     updated_gear = JSON.parse(response.body, symbolize_names: true)[:data][:updateGear][:gear]
 
     expect(response).to be_successful
-    expect(updated_gear[:item_name]).to eq("0 degrees sleeping bag")
+    expect(updated_gear[:itemName]).to eq("0 degrees sleeping bag")
   end
 
   xit "delete's a piece of gear" do
