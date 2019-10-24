@@ -1,5 +1,8 @@
 module Types
   class MutationType < Types::BaseObject
+    field :removeContact, mutation: Mutations::RemoveContact
+    field :createContact, mutation: Mutations::CreateContact
+    field :updateContact, mutation: Mutations::UpdateContact
     field :createUser, mutation: Mutations::CreateUser
     field :updateUser, mutation: Mutations::UpdateUser
     field :createTrip, mutation: Mutations::CreateTrip
