@@ -5,6 +5,7 @@ describe "User Emergency Contacts" do
     @user = create(:user)
     @contact_1 = create(:emergency_contact, user_id: @user.id)
     @contact_2 = create(:emergency_contact, user_id: @user.id)
+    @trip = create(:trip, user_id: @user.id)
   end
 
   it "returns a user's contacts" do
@@ -83,5 +84,42 @@ describe "User Emergency Contacts" do
     expect(contact.name).to eq("Julie")
     expect(contact.phone).to eq("232-233-3232")
     expect(contact.email).to eq("julie@gmail.com")
+  end
+
+  it "adds a contact to a trip" do
+    mutation = (
+      %(mutation{
+        addContactToTrip(input: {
+          tripId: #{@trip.id}
+          emergencyContactId: #{@contact_1.id}
+        }) {
+          clientMutationId
+        }
+      })
+    )
+
+    post "/graphql", params: { "query" => mutation }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+    expect(TripContact.last.trip_id).to eq(@trip.id)
+    expect(TripContact.last.emergency_contact_id).to eq(@contact_1.id)
+  end
+
+  it "removes a contact from a trip" do
+    TripContact.create(
+      emergency_contact_id: @contact_1.id,
+      trip_id: @trip.id
+    )
+    mutation = (
+      %(mutation{
+        removeContactFromTrip(input: {
+          tripId: #{@trip.id}
+          emergencyContactId: #{@contact_1.id}
+        }) {
+          clientMutationId
+        }
+      })
+    )
+
+    post "/graphql", params: { "query" => mutation }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+    expect(TripContact.last).to eq(nil)
   end
 end

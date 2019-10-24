@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 2019_10_24_180449) do
     t.index ["user_id"], name: "index_gears_on_user_id"
   end
 
+  create_table "trip_contacts", force: :cascade do |t|
+    t.bigint "emergency_contact_id"
+    t.bigint "trip_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["emergency_contact_id"], name: "index_trip_contacts_on_emergency_contact_id"
+    t.index ["trip_id"], name: "index_trip_contacts_on_trip_id"
+  end
+
   create_table "trips", force: :cascade do |t|
     t.string "name"
     t.string "starting_point"
@@ -85,6 +94,8 @@ ActiveRecord::Schema.define(version: 2019_10_24_180449) do
 
   add_foreign_key "emergency_contacts", "users"
   add_foreign_key "gears", "users"
+  add_foreign_key "trip_contacts", "emergency_contacts"
+  add_foreign_key "trip_contacts", "trips"
   add_foreign_key "trips", "users"
   add_foreign_key "vehicles", "users"
 end

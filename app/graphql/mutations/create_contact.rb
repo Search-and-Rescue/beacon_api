@@ -1,10 +1,10 @@
 class Mutations::CreateContact < Mutations::BaseMutation
-  argument :user_id, Integer, required: true
+  argument :user_id, ID, required: true
   argument :name, String, required: true
   argument :email, String, required: true
   argument :phone, String, required: true
 
-  field :emergencyContact, Types::EmergencyContactType, null: false
+  field :emergencyContact, Types::EmergencyContactType, null: true
   field :errors, [String], null: false
 
   def resolve(**attributes)
