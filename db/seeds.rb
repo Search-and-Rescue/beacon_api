@@ -26,6 +26,16 @@
     cosar_card: Faker::Boolean.boolean
   )
 
+  user = User.create!(
+    name: "Bear Grylls",
+    email: "bearg@gmail.com",
+    address: "335 Cave St",
+    city: "Rocky Mountain",
+    state: "CO",
+    zip: 80220,
+    experience_level: 2
+  )
+
   trip_1 = Trip.create!(
     name: "Rocky Mountain National Park Backpacking Trip",
     starting_point: "Coyote Trail Head",
@@ -39,16 +49,6 @@
     traveling_companions: 0,
     user_id: user.id
   )
-
-  user = User.create!(
-  name: "Bear Grylls",
-  email: "bearg@gmail.com",
-  address: "335 Cave St",
-  city: "Rocky Mountain",
-  state: "CO",
-  zip: 80220,
-  experience_level: 2
-)
 
   trip_2 = Trip.create!(
     name: "Indian Peaks Backpacking Trip",
@@ -81,5 +81,4 @@
     license_plate: "YEY 594",
     user_id: 1
   )
-
 end
