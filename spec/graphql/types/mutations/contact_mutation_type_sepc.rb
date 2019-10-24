@@ -44,5 +44,22 @@ RSpec.describe Types::QueryType do
       expect(EmergencyContact.last.phone).to eq("232-233-3232")
       expect(EmergencyContact.last.email).to eq("julie@gmail.com")
     end
+
+    it "should remove a contact" do
+      user = create(:user)
+      contact = create(:emergency_contact, user_id: user.id)
+      mutation = (
+        %(mutation{
+          removeContact(input: {
+            id: #{contact.id}
+          }) {
+            clientMutationId
+          }
+        })
+      )
+
+      SearchAndRescueApiSchema.execute(mutation).as_json
+      expect(user.emergency_contacts.length).to eq(0)
+    end
   end
 end
