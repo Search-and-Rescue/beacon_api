@@ -90,7 +90,8 @@ describe "User's Vehicles" do
 
     query = (
       %(mutation {
-        createVehicle(input: {
+        updateVehicle(input: {
+          id: #{@vehicle_1.id}
           make: "Dodge",
           model: "Ram",
           year: 2015,
@@ -111,7 +112,7 @@ describe "User's Vehicles" do
 
     post "/graphql", params: { "query" => query }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
 
-    new_vehicle = JSON.parse(response.body, symbolize_names: true)[:data][:createVehicle][:vehicle]
+    new_vehicle = JSON.parse(response.body, symbolize_names: true)[:data][:updateVehicle][:vehicle]
 
     expect(response).to be_successful
     expect(new_vehicle[:make]).to eq("Dodge")
@@ -119,11 +120,11 @@ describe "User's Vehicles" do
     expect(new_vehicle[:year]).to eq(2015)
   end
 
-  it "delete's a vehicle" do
+  it "removes a vehicle" do
 
     query = (
       %(mutation {
-          deleteVehicle( input: {
+          removeVehicle( input: {
             id: #{@vehicle_1.id} }){
             vehicle {
               id

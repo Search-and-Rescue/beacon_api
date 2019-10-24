@@ -69,7 +69,7 @@ RSpec.describe Types::QueryType do
 
       mutation = (
         %(mutation {
-          deleteVehicle( input: {
+          removeVehicle( input: {
             id: #{vehicle.id} }){
             vehicle {
               id

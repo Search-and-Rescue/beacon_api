@@ -19,7 +19,7 @@ class Mutations::CreateVehicle < Mutations::BaseMutation
     else
       {
         vehicle: nil,
-        errors: trip.errors.full_messages
+        errors: vehicle.errors.full_messages
       }
     end
   end

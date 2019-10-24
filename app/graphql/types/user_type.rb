@@ -21,5 +21,6 @@ module Types
     field :emergency_contacts, [Types::EmergencyContactType], null: true
     field :trips, [Types::TripType], null: true
     field :vehicles, [Types::VehicleType], null: true
+    field :gear, [Types::GearType], null: true
   end
 end
