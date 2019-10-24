@@ -6,5 +6,6 @@ module Types
     field :email, String, null: false
 
     field :user, Types::UserType, null: false
+    field :trips, [Types::TripType], null: true
   end
 end
