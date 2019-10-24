@@ -11,6 +11,8 @@ module Types
     field :notification_date, String, null: true
     field :notification_time, String, null: true
     field :traveling_companions, Integer, null: true
+    
     field :user, Types::UserType, null: false
+    field :emergency_contacts, [Types::EmergencyContactType], null: true
   end
 end
