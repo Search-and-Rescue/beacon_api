@@ -72,8 +72,21 @@ ActiveRecord::Schema.define(version: 2019_10_24_034726) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "vehicles", force: :cascade do |t|
+    t.string "make"
+    t.string "model"
+    t.integer "year"
+    t.string "color"
+    t.string "license_plate"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_vehicles_on_user_id"
+  end
+
   add_foreign_key "emergency_contacts", "users"
   add_foreign_key "trip_contacts", "emergency_contacts"
   add_foreign_key "trip_contacts", "trips"
   add_foreign_key "trips", "users"
+  add_foreign_key "vehicles", "users"
 end

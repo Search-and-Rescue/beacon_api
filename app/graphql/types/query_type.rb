@@ -33,12 +33,17 @@ module Types
       argument :id, ID, required: true
     end
 
-    def trips
-      Trip.all
-    end
-
     def trip(id:)
       Trip.find(id)
+    end
+
+    field :vehicle, Types::VehicleType, null: true do
+      description "Find a vehicle by id"
+      argument :id, ID, required: true
+    end
+
+    def vehicle(id:)
+      Vehicle.find(id)
     end
   end
 end
