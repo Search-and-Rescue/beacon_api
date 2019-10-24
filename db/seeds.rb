@@ -20,6 +20,7 @@
     experience_level: Faker::Number.between(from: 0, to: 2),
     age: rand(15..100),
     weight: rand(90..300),
+    height: Faker::Measurement.height,
     hair_color: Faker::Color.color_name,
     skin_color: Faker::Color.color_name,
     gender: Faker::Color.color_name,
@@ -32,13 +33,21 @@
     email: Faker::Internet.unique.email(name: contact_name),
     user_id: user.id
   )
+  Vehicle.create(
+    make: Faker::Vehicle.make,
+    model: Faker::Vehicle.model,
+    year: Faker::Vehicle.year,
+    color: Faker::Vehicle.color,
+    license_plate: Faker::Vehicle.license_plate,
+    user_id: user.id
+  )
 end
 
 50.times do
   name = Faker::Company.name
   start_date = Faker::Date.between(from: 6.days.ago, to: Date.today)
   end_date = Faker::Date.between(from: Date.today, to: 6.days.from_now)
-  Trip.create(
+  trip = Trip.create(
     name: name,
     starting_point: name,
     ending_point: Faker::Company.name,
@@ -51,5 +60,7 @@ end
     traveling_companions: rand(1..2),
     user_id: User.find(User.pluck(:id).sample).id
   )
-
+  user = User.find(trip.user_id)
+  contact = user.emergency_contacts.sample
+  TripContact.create(emergency_contact_id: contact.id, trip_id: trip.id)
 end
