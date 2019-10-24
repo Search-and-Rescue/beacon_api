@@ -9,11 +9,11 @@ RSpec.describe Types::QueryType do
       mutation = (
         %(mutation {
           createGear(input: {
-            item_name: "JetBoil",
+            itemName: "JetBoil",
             userId: #{user.id}
           }){
             gear {
-              item_name
+              itemName
             }
           }
         })
@@ -32,11 +32,11 @@ RSpec.describe Types::QueryType do
         %(mutation {
           updateGear(input: {
             id: #{gear.id}
-            item_name: "water",
+            itemName: "water",
             userId: #{user.id}
           }){
             gear {
-              item_name
+              itemName
             }
           }
         })
@@ -57,7 +57,7 @@ RSpec.describe Types::QueryType do
             id: #{gear.id} }){
             gear {
               id
-              item_name
+              itemName
             }
           }
         })

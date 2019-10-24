@@ -15,7 +15,7 @@ describe "User's Gear" do
       %(query {
         user(id: #{@user.id}) {
           gear {
-            item_name
+            itemName
           }
         }
       })
@@ -26,9 +26,9 @@ describe "User's Gear" do
     gear = JSON.parse(response.body, symbolize_names: true)[:data][:user][:gear]
 
     expect(response).to be_successful
-    expect(gear[0][:item_name]).to eq(@food.item_name)
-    expect(gear[1][:item_name]).to eq(@sleeping_bag.item_name)
-    expect(gear[1][:item_name]).to eq(@water.item_name)
+    expect(gear[0][:itemName]).to eq(@food.item_name)
+    expect(gear[1][:itemName]).to eq(@sleeping_bag.item_name)
+    expect(gear[1][:itemName]).to eq(@water.item_name)
   end
 
   xit "returns a single piece of gear" do
@@ -36,7 +36,7 @@ describe "User's Gear" do
     query = (
       %(query {
         gear(id: #{@sleeping_bag.id}) {
-          item_name
+          itemName
         }
       })
     )
@@ -58,7 +58,7 @@ describe "User's Gear" do
           userId: #{@user.id}
         }){
           gear {
-            item_name
+            itemName
           }
         }
       })
@@ -78,11 +78,11 @@ describe "User's Gear" do
       %(mutation {
         updateGear(input: {
           id: #{@sleeping_bag.id},
-          item_name: "0 degrees sleeping bag",
+          itemName: "0 degrees sleeping bag",
           userId: #{@user.id}
         }){
           gear {
-            item_name
+            itemName
           }
         }
       })
@@ -100,16 +100,12 @@ describe "User's Gear" do
 
     query = (
       %(mutation {
-          removeGear( input: {
-            id: #{@vehicle_1.id} }){
-            vehicle {
-              id
-              make
-              model
-              year
-              color
-              licensePlate
-            }
+        removeGear( input: {
+          id: #{gear.id} }){
+          gear {
+            id
+            itemName
+          }
         }
       })
     )

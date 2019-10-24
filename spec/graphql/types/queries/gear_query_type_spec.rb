@@ -10,7 +10,7 @@ RSpec.describe Types::QueryType do
         %(query {
           user(id: #{user.id}) {
             gear {
-              item_name
+              itemName
             }
           }
         })
@@ -27,7 +27,7 @@ RSpec.describe Types::QueryType do
       query = (
         %(query {
           gear(id: #{gear.id}) {
-            item_name
+            itemName
             user {
               id
               name
