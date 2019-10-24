@@ -4,7 +4,6 @@ module Types
     field :name, String, null: false
     field :phone, String, null: false
     field :email, String, null: false
-
     field :user, Types::UserType, null: false
     field :trips, [Types::TripType], null: true
   end

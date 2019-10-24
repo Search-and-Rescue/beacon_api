@@ -1,6 +1,6 @@
 class Mutations::AddContactToTrip < Mutations::BaseMutation
-  argument :emergency_contact_id, Integer, required: true
-  argument :trip_id, Integer, required: true
+  argument :emergency_contact_id, ID, required: true
+  argument :trip_id, ID, required: true
 
   def resolve(**args)
     trip_contact = TripContact.new(args)
@@ -12,7 +12,7 @@ class Mutations::AddContactToTrip < Mutations::BaseMutation
     else
       {
         trip_contact: nil,
-        errors: trip.errors.full_messages
+        errors: trip_contact.errors.full_messages
       }
     end
   end
