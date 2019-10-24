@@ -1,15 +1,15 @@
 FactoryBot.define do
   factory :trip do
-    name { "MyString" }
-    starting_point { "MyString" }
-    ending_point { "MyString" }
-    start_date { "2019-10-20" }
-    start_time { "2019-10-20 15:39:32" }
-    end_date { "2019-10-20" }
-    end_time { "2019-10-20 15:39:32" }
-    notification_date { "2019-10-20" }
-    notification_time { "2019-10-20 15:39:32" }
-    traveling_companions { 1 }
+    name { Faker::Company.name }
+    starting_point { name }
+    ending_point { Faker::Company.name }
+    start_date { Faker::Date.between(from: 6.days.ago, to: Date.today) }
+    start_time { start_date }
+    end_date { Faker::Date.between(from: Date.today, to: 6.days.from_now) }
+    end_time { end_date }
+    notification_date { end_date + 1 }
+    notification_time { end_time + 1  }
+    traveling_companions { rand(1..2) }
     user
   end
 end

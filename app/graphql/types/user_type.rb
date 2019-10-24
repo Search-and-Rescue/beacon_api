@@ -1,6 +1,6 @@
 module Types
   class UserType < Types::BaseObject
-    field :id, Integer, null: false
+    field :id, ID, null: false
     field :name, String, null: false
     field :address, String, null: false
     field :city, String, null: false
@@ -17,6 +17,8 @@ module Types
     field :skin_color, String, null: true
     field :gender, String, null: true
     field :cosar_card, Boolean, null: true
+
+    field :emergency_contacts, [Types::EmergencyContactType], null: true
     field :trips, [Types::TripType], null: true
     field :vehicles, [Types::VehicleType], null: true
   end
