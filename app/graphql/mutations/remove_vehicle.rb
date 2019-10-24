@@ -1,4 +1,4 @@
-class Mutations::DeleteVehicle < Mutations::BaseMutation
+class Mutations::RemoveVehicle < Mutations::BaseMutation
   argument :id, ID, required: true
 
   field :vehicle, Types::VehicleType, null: true

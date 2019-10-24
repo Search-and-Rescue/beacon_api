@@ -9,6 +9,6 @@ module Types
     field :updateTrip, mutation: Mutations::UpdateTrip
     field :createVehicle, mutation: Mutations::CreateVehicle
     field :updateVehicle, mutation: Mutations::UpdateVehicle
-    field :deleteVehicle, mutation: Mutations::DeleteVehicle
+    field :removeVehicle, mutation: Mutations::RemoveVehicle
   end
 end
