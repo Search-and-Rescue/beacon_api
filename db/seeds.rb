@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 user = User.create!(
   name: "Bear Grylls",
-  email: "bearg@gmail.com",
+  email: "bearg@yahoo.com",
   address: "335 Cave St",
   city: "Rocky Mountain",
   state: "CO",
@@ -41,4 +41,22 @@ trip_2 = Trip.create!(
   notification_time: "1500",
   traveling_companions: 0,
   user_id: user.id
+)
+
+vehicle_1 = Vehicle.create!(
+  make: "Dodge",
+  model: "Ram",
+  year: 2005,
+  color: "silver",
+  license_plate: "CYE 990",
+  user_id: user.id,
+)
+
+vehicle_2 = Vehicle.create!(
+  make: "Subaru",
+  model: "Impreza",
+  year: 2017,
+  color: "silver",
+  license_plate: "BBY 800",
+  user_id: user.id,
 )
