@@ -4,7 +4,6 @@ RSpec.describe Types::QueryType do
   describe "vehicle mutations" do
     it "should create a vehicle" do
       user = create(:user)
-      vehicle = create(:vehicle, user_id: user.id)
 
       mutation = (
         %(mutation {
@@ -30,15 +29,37 @@ RSpec.describe Types::QueryType do
       new_vehicle = SearchAndRescueApiSchema.execute(mutation).as_json['data']['createVehicle']['vehicle']
       expect(new_vehicle.length).to eq(5)
       expect(new_vehicle['make']).to eq("Dodge")
-
     end
 
-    it "should create a vehicle" do
+    it "should update a vehicle" do
       user = create(:user)
       vehicle = create(:vehicle, user_id: user.id)
 
-      updated_vehicle = SearchAndRescueApiSchema.execute(mutation).as_json['data']['updateVehicle']
-      expect(updated_vehicle.length).to eq(1)
+      mutation = (
+        %(mutation {
+          updateVehicle(input: {
+            id: #{vehicle.id}
+            make: "Dodge",
+            model: "Ram",
+            year: 2015,
+            color: "silver",
+            licensePlate: "CYE 990",
+            userId: #{user.id}
+          }){
+            vehicle {
+              make
+              model
+              year
+              color
+              licensePlate
+            }
+          }
+        })
+      )
+
+      updated_vehicle = SearchAndRescueApiSchema.execute(mutation).as_json['data']['updateVehicle']['vehicle']
+      expect(updated_vehicle.length).to eq(5)
+      expect(updated_vehicle['year']).to eq(2015)
     end
   end
 end

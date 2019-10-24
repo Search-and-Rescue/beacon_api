@@ -34,6 +34,7 @@ describe "User's Vehicles" do
   end
 
   it "returns a single vehicle" do
+
     query = (
       %(query {
         vehicle(id: #{@vehicle_1.id}) {
@@ -42,6 +43,7 @@ describe "User's Vehicles" do
         }
       })
     )
+
     post "/graphql", params: { "query" => query }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
 
     vehicle = JSON.parse(response.body, symbolize_names: true)[:data][:vehicle]
@@ -49,5 +51,71 @@ describe "User's Vehicles" do
     expect(response).to be_successful
     expect(vehicle[:make]).to eq(@vehicle_1.make)
     expect(vehicle[:model]).to eq(@vehicle_1.model)
+  end
+
+  it "creates a vehicle" do
+
+    query = (
+      %(mutation {
+        createVehicle(input: {
+          make: "Dodge",
+          model: "Ram",
+          year: 2005,
+          color: "silver",
+          licensePlate: "CYE 990",
+          userId: #{@user.id}
+        }){
+          vehicle {
+            make
+            model
+            year
+            color
+            licensePlate
+          }
+        }
+      })
+    )
+
+    post "/graphql", params: { "query" => query }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+
+    new_vehicle = JSON.parse(response.body, symbolize_names: true)[:data][:createVehicle][:vehicle]
+
+    expect(response).to be_successful
+    expect(new_vehicle[:make]).to eq("Dodge")
+    expect(new_vehicle[:model]).to eq("Ram")
+    expect(new_vehicle[:year]).to eq(2005)
+  end
+
+  it "updates a vehicle" do
+
+    query = (
+      %(mutation {
+        createVehicle(input: {
+          make: "Dodge",
+          model: "Ram",
+          year: 2015,
+          color: "silver",
+          licensePlate: "CYE 990",
+          userId: #{@user.id}
+        }){
+          vehicle {
+            make
+            model
+            year
+            color
+            licensePlate
+          }
+        }
+      })
+    )
+
+    post "/graphql", params: { "query" => query }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+
+    new_vehicle = JSON.parse(response.body, symbolize_names: true)[:data][:createVehicle][:vehicle]
+
+    expect(response).to be_successful
+    expect(new_vehicle[:make]).to eq("Dodge")
+    expect(new_vehicle[:model]).to eq("Ram")
+    expect(new_vehicle[:year]).to eq(2015)
   end
 end
