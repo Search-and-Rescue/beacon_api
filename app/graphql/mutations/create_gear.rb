@@ -15,7 +15,7 @@ class Mutations::CreateGear < Mutations::BaseMutation
     else
       {
         gear: nil,
-        errors: trip.errors.full_messages
+        errors: gear.errors.full_messages
       }
     end
   end
