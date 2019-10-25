@@ -13,7 +13,7 @@ To setup locally, run the following commands:
 ### Endpoint
 All requests should be made with a `POST` request to `/graphql?query=[request]`.
 
-### User Request
+### User Requests
 
 **All Users:**
 ```
@@ -54,16 +54,18 @@ All requests should be made with a `POST` request to `/graphql?query=[request]`.
 }
 ```
 
-### Trip Request
+### Trip Requests
 
 **All Trips for a User:**
 ```
- user(id: 1) {
+query {
+  user(id: 1) {
     trips{
-       id
-       name
-       travelingCompanions
-     }
+      id
+      name
+      travelingCompanions
+      }
+    } 
   }
 }  
 
@@ -71,13 +73,14 @@ All requests should be made with a `POST` request to `/graphql?query=[request]`.
 
 **Single Trip:**
 ```
-{
+query {
   trip(id: 1){
     name
     startDate
     startTime
     endDate
     endTime
+    }
   }
 }
 
@@ -85,6 +88,7 @@ All requests should be made with a `POST` request to `/graphql?query=[request]`.
 
 **Create Trip:**
 ```
+mutation {
  createTrip(input: {
    name: "Spanish Peaks Backpacking Trip"
    startingPoint: "Coyote Trail Head"
@@ -111,11 +115,13 @@ All requests should be made with a `POST` request to `/graphql?query=[request]`.
       notificationTime
       travelingCompanions
     }
-  } 
+  }
+} 
 ```
 
 **Update Trip**
 ```
+mutation {
  upateTrip(input: {
    name: "Spanish Peaks Backpacking Trip"
    startingPoint: "Coyote Trail Head"
@@ -142,7 +148,105 @@ All requests should be made with a `POST` request to `/graphql?query=[request]`.
       notificationTime
       travelingCompanions
     }
-  } 
+  }
+} 
 ```
+
+### Vehicle Requests
+
+**All Vehicles for a User:**
+```
+query {
+  user(id: 1) {
+    veicles{
+      id
+      make
+      model
+      year
+      color
+      licensePlate
+      }
+    } 
+  }
+}
+```
+**Single Vehicle:**
+```
+{
+  vehicle(id: 1){
+    make
+    model
+    year
+    color
+    licensePlate
+  }
+}
+```
+
+**Create Vehicle**
+```
+mutation {
+  createVehicle(input: {
+    make: "Ford"
+    model: "F150"
+    year: 2010
+    color: "silver"
+    licensePlate: "CYE 909"
+    userId: 1
+  }) {
+    vehicle {
+      id
+      make
+      model
+      year
+      color
+      licensePlate
+    }
+  } 
+}
+```
+
+**Update Vehicle**
+```
+mutation {
+  updateVehicle(input: {
+    make: "Ford"
+    model: "F150"
+    year: 2015
+    color: "silver"
+    licensePlate: "CYE 909"
+    userId: 1
+  }) {
+    vehicle {
+      id
+      make
+      model
+      year
+      color
+      licensePlate
+    }
+  } 
+}
+```
+
+**Remove Vehicle**
+```
+mutation {
+  deleteVehicle( input: {
+    id: 2 }){
+    vehicle {
+      id
+      make
+      model
+      year
+      color
+      licensePlate
+    }
+  }
+}
+```
+
+
+
 
 
