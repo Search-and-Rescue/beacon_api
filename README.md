@@ -53,3 +53,96 @@ All requests should be made with a `POST` request to `/graphql?query=[request]`.
   }
 }
 ```
+
+### Trip Request
+
+**All Trips for a User:**
+```
+ user(id: 1) {
+    trips{
+       id
+       name
+       travelingCompanions
+     }
+  }
+}  
+
+```
+
+**Single Trip:**
+```
+{
+  trip(id: 1){
+    name
+    startDate
+    startTime
+    endDate
+    endTime
+  }
+}
+
+```
+
+**Create Trip:**
+```
+ createTrip(input: {
+   name: "Spanish Peaks Backpacking Trip"
+   startingPoint: "Coyote Trail Head"
+   endingPoint: "Coyote Trail Head"
+   startDate: "May 1, 2020"
+   startTime: "08:00"
+   endDate: "May 3, 2020"
+   endTime: "22:00"
+   notificationDate: "May 4, 2020"
+   notificationTime: "15:00"
+   travelingCompanions: 0
+   userId: 1
+ }) {
+   trip {
+      id
+      name
+      startingPoint
+      endingPoint
+      startDate
+      startTime
+      endDate
+      endTime
+      notificationDate
+      notificationTime
+      travelingCompanions
+    }
+  } 
+```
+
+**Update Trip**
+```
+ upateTrip(input: {
+   name: "Spanish Peaks Backpacking Trip"
+   startingPoint: "Coyote Trail Head"
+   endingPoint: "Coyote Trail Head"
+   startDate: "May 1, 2020"
+   startTime: "08:00"
+   endDate: "May 3, 2020"
+   endTime: "22:00"
+   notificationDate: "May 4, 2020"
+   notificationTime: "15:00"
+   travelingCompanions: 2
+   userId: 1
+ }) {
+   trip {
+      id
+      name
+      startingPoint
+      endingPoint
+      startDate
+      startTime
+      endDate
+      endTime
+      notificationDate
+      notificationTime
+      travelingCompanions
+    }
+  } 
+```
+
+
