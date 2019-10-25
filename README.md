@@ -232,7 +232,7 @@ mutation {
 **Remove Vehicle**
 ```
 mutation {
-  deleteVehicle( input: {
+  removeVehicle( input: {
     id: 2 }){
     vehicle {
       id
@@ -241,6 +241,71 @@ mutation {
       year
       color
       licensePlate
+    }
+  }
+}
+```
+
+### Gear Requests
+
+**All Gear for a User:**
+```
+query {
+  user(id: 1) {
+    gear{
+      id
+      itemName
+      }
+    } 
+  }
+}
+```
+**Single Piece of Gear:**
+```
+{
+  gear(id: 1){
+    itemName
+  }
+}
+```
+
+**Create Gear**
+```
+mutation {
+  createGear(input: {
+    itemName: "sleeping bag"
+    userId: 1
+  }) {
+    gear {
+      id
+      itemName
+    }
+  } 
+}
+```
+
+**Update Gear**
+```
+mutation {
+  updateGear(input: {
+    itemName: "0 degree sleeping bag"
+    userId: 1
+  }) {
+    gear {
+      id
+      itemName
+    }
+  } 
+}
+```
+
+**Remove Gear**
+```
+mutation {
+  removeGear( input: {
+    id: 2 }){
+    gear {
+      itemName
     }
   }
 }
