@@ -49,6 +49,7 @@ end
   end_date = Faker::Date.between(from: Date.today, to: 6.days.from_now)
   trip = Trip.create(
     name: name,
+    activity_type: Faker::Job.key_skill,
     starting_point: name,
     ending_point: Faker::Company.name,
     start_date: start_date,
