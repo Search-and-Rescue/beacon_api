@@ -12,12 +12,14 @@ RSpec.describe Types::QueryType do
             city: "Denver",
             state: "CO",
             zip: 80210
+            experienceLevel: 1
           }) {
             user {
               id
               name
               email
               address
+              experienceLevel
             }
           }
         })
@@ -27,6 +29,7 @@ RSpec.describe Types::QueryType do
       expect(user['name']).to eq("Tyler")
       expect(user['email']).to eq("tyler@gmail.com")
       expect(user['address']).to eq("123 Rocky Rd")
+      expect(user['experienceLevel']).to eq("moderate")
     end
 
     it "should update a user" do
@@ -41,12 +44,14 @@ RSpec.describe Types::QueryType do
             city: "Denver",
             state: "CO",
             zip: 80210
+            experienceLevel: 2
           }) {
             user {
               id
               name
               email
               address
+              experienceLevel
             }
           }
         })
@@ -56,6 +61,7 @@ RSpec.describe Types::QueryType do
       expect(updated_user['id'].to_i).to eq(user.id)
       expect(updated_user['name']).to eq("Billy")
       expect(updated_user['email']).to eq("billy@gmail.com")
+      expect(updated_user['experienceLevel']).to eq("advanced")
     end
   end
 end
