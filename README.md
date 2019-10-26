@@ -7,6 +7,7 @@ To setup locally, run the following commands:
  - `git clone https://github.com/Search-and-Rescue/search_and_rescue_api.git`
  - `cd search_and_rescupe_api`
  - `bundle install`
+ - `bundle exec rake import`
  - `rails s`
  - Navigate to `localhost:300/graphiql` to view the GraphiQL, an in-browser IDE for exploring the API
 

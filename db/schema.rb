@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(version: 2019_10_26_035829) do
     t.index ["user_id"], name: "index_gears_on_user_id"
   end
 
+  create_table "search_and_rescues", force: :cascade do |t|
+    t.string "team_name"
+    t.string "county"
+    t.string "contact"
+    t.string "contact_number"
+    t.string "city"
+    t.string "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "trip_contacts", force: :cascade do |t|
     t.bigint "emergency_contact_id"
     t.bigint "trip_id"
