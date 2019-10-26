@@ -8,7 +8,7 @@ class Mutations::CreateUser < Mutations::BaseMutation
   argument :phone, String, required: false
   argument :password_digest, String, required: false
   argument :allergies, String, required: false
-  argument :age, Integer, required: false
+  argument :birth_date, String, required: false
   argument :weight, Integer, required: false
   argument :height, String, required: false
   argument :hair_color, String, required: false

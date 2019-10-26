@@ -78,8 +78,7 @@ describe "User's Gear" do
       %(mutation {
         updateGear(input: {
           id: #{@sleeping_bag.id},
-          itemName: "0 degrees sleeping bag",
-          userId: #{@user.id}
+          itemName: "0 degrees sleeping bag"
         }){
           gear {
             itemName

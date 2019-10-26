@@ -1,7 +1,7 @@
 class Mutations::UpdateGear < Mutations::BaseMutation
   argument :id, ID, required: true
-  argument :user_id, ID, required: true
   argument :item_name, String, required: false
+  argument :description, String, required: false
 
   field :gear, Types::GearType, null: true
   field :errors, [String], null: false

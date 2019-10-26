@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_26_182055) do
+ActiveRecord::Schema.define(version: 2019_10_26_202653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_10_26_182055) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
     t.index ["user_id"], name: "index_gears_on_user_id"
   end
 
@@ -77,6 +78,7 @@ ActiveRecord::Schema.define(version: 2019_10_26_182055) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "activity_type"
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
@@ -91,7 +93,6 @@ ActiveRecord::Schema.define(version: 2019_10_26_182055) do
     t.string "password_digest"
     t.string "allergies"
     t.integer "experience_level"
-    t.integer "age"
     t.integer "weight"
     t.string "hair_color"
     t.string "skin_color"
@@ -100,6 +101,7 @@ ActiveRecord::Schema.define(version: 2019_10_26_182055) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "height"
+    t.string "birth_date"
   end
 
   create_table "vehicles", force: :cascade do |t|
@@ -111,6 +113,7 @@ ActiveRecord::Schema.define(version: 2019_10_26_182055) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "state"
     t.index ["user_id"], name: "index_vehicles_on_user_id"
   end
 

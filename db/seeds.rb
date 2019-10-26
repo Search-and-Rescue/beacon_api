@@ -18,7 +18,7 @@
     password_digest: Faker::Alphanumeric.unique.alphanumeric(number: 30),
     allergies: Faker::Food.fruits,
     experience_level: Faker::Number.between(from: 0, to: 2),
-    age: rand(15..100),
+    birth_date: Faker::Date.between(from: 60.years.ago, to: 18.years.ago),
     weight: rand(90..300),
     height: Faker::Measurement.height,
     hair_color: Faker::Color.color_name,
@@ -38,6 +38,7 @@
     model: Faker::Vehicle.model,
     year: Faker::Vehicle.year,
     color: Faker::Vehicle.color,
+    state: Faker::Address.state_abbr,
     license_plate: Faker::Vehicle.license_plate,
     user_id: user.id
   )
@@ -49,6 +50,7 @@ end
   end_date = Faker::Date.between(from: Date.today, to: 6.days.from_now)
   trip = Trip.create(
     name: name,
+    activity_type: Faker::Job.key_skill,
     starting_point: name,
     ending_point: Faker::Company.name,
     start_date: start_date,
@@ -68,6 +70,7 @@ end
 100.times do
   item = Gear.create(
     item_name: Faker::Commerce.product_name,
+    description: Faker::ChuckNorris.fact,
     user_id: User.find(User.pluck(:id).sample).id
   )
   TripGear.create(

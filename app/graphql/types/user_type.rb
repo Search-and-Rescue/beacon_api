@@ -11,7 +11,7 @@ module Types
     field :password_digest, String, null: true
     field :allergies, String, null: true
     field :experience_level, Integer, null: true
-    field :age, Integer, null: true
+    field :birth_date, String, null: true
     field :weight, Integer, null: true
     field :height, Integer, null: true
     field :hair_color, String, null: true

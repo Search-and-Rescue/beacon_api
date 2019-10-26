@@ -10,7 +10,7 @@ FactoryBot.define do
     password_digest { Faker::Alphanumeric.unique.alphanumeric(number: 30) }
     allergies { Faker::Food.unique.fruits }
     experience_level { rand(0...2) }
-    age { rand(15..100) }
+    birth_date { Faker::Date.between(from: 60.years.ago, to: 18.years.ago) }
     weight { rand(100..300) }
     hair_color { Faker::Color.color_name }
     skin_color { Faker::Color.color_name }

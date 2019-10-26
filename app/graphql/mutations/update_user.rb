@@ -10,7 +10,7 @@ class Mutations::UpdateUser < Mutations::BaseMutation
   argument :password_digest, String, required: false
   argument :allergies, String, required: false
   argument :experience_level, Integer, required: false
-  argument :age, Integer, required: false
+  argument :birth_date, String, required: false
   argument :weight, Integer, required: false
   argument :height, Integer, required: false
   argument :hair_color, String, required: false
