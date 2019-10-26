@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Types::QueryType do
   describe "gear queries" do
-    it "should return all a user's gear" do
+    it "should return all of a user's gear" do
       user = create(:user)
       create_pair(:gear, user_id: user.id)
 
