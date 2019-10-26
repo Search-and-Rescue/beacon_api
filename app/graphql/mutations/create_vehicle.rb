@@ -4,6 +4,7 @@ class Mutations::CreateVehicle < Mutations::BaseMutation
   argument :model, String, required: false
   argument :year, Integer, required: false
   argument :color, String, required: false
+  argument :state, String, required: false
   argument :license_plate, String, required: false
 
   field :vehicle, Types::VehicleType, null: true
