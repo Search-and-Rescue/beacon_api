@@ -71,5 +71,20 @@ module Types
     def trip_gears
       TripGear.all
     end
+    
+    field :teams, [Types::SearchAndRescueType], null: false
+    #Gets all search and rescue teams
+    def teams
+      SearchAndRescue.all
+    end
+
+    field :team, Types::SearchAndRescueType, null: true do
+      description "Find a team by id"
+      argument :id, ID, required: true
+    end
+
+    def team(id:)
+      SearchAndRescue.find(id)
+    end
   end
 end
