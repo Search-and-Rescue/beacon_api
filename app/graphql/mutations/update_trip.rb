@@ -2,6 +2,7 @@ class Mutations::UpdateTrip < Mutations::BaseMutation
   argument :id, ID, required: true
   argument :user_id, ID, required: true
   argument :name, String, required: true
+  argument :activity_type, String, required: false
   argument :starting_point, String, required: false
   argument :ending_point, String, required: false
   argument :start_date, String, required: false

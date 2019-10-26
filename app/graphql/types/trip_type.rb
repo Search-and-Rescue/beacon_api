@@ -2,6 +2,7 @@ module Types
   class TripType < Types::BaseObject
     field :id, ID, null: false
     field :name, String, null: false
+    field :activity_type, String, null: false
     field :starting_point, String, null: false
     field :ending_point, String, null: false
     field :start_date, String, null: true
