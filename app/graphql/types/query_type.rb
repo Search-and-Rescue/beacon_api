@@ -70,6 +70,8 @@ module Types
 
     def trip_gears
       TripGear.all
+    end
+    
     field :teams, [Types::SearchAndRescueType], null: false
     #Gets all search and rescue teams
     def teams
