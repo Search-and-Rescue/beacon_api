@@ -38,6 +38,7 @@
     model: Faker::Vehicle.model,
     year: Faker::Vehicle.year,
     color: Faker::Vehicle.color,
+    state: Faker::Address.state_abbr,
     license_plate: Faker::Vehicle.license_plate,
     user_id: user.id
   )
