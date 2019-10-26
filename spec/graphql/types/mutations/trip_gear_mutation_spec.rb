@@ -31,5 +31,34 @@ RSpec.describe Types::QueryType do
       expect(response['tripGear']['comments']).to eq("This is a test")
       expect(response['tripGear']['gear']['itemName']).to eq(gear.item_name)
     end
+
+    it "should remove gear from a trip" do
+      user = create(:user)
+      trip = create(:trip, user_id: user.id)
+      gear = create(:gear, user_id: user.id)
+      trip_gear = TripGear.create(
+        comments: "Test",
+        trip_id: trip.id,
+        gear_id: gear.id
+      )
+
+      mutation = (
+        %(mutation{
+          removeGearFromTrip(input: {
+            gearId: #{gear.id}
+            tripId: #{trip.id}
+          }) {
+            tripGear{
+              gear{
+                itemName
+              }
+            }
+          }
+        })
+      )
+      response = SearchAndRescueApiSchema.execute(mutation).as_json['data']['removeGearFromTrip']
+      expect(response['tripGear']['gear']['itemName']).to eq(gear.item_name)
+      expect(TripGear.where(trip_id: trip.id, gear_id: gear.id).first).to eq(nil)
+    end
   end
 end
