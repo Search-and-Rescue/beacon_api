@@ -10,6 +10,7 @@ RSpec.describe Types::QueryType do
         %(mutation {
           createGear(input: {
             itemName: "JetBoil",
+            description: "It gets hot",
             userId: #{user.id}
           }){
             gear {
@@ -20,7 +21,6 @@ RSpec.describe Types::QueryType do
       )
 
       new_gear = SearchAndRescueApiSchema.execute(mutation).as_json['data']['createGear']['gear']
-
       expect(new_gear.length).to eq(1)
       expect(new_gear['itemName']).to eq("JetBoil")
     end
@@ -34,7 +34,7 @@ RSpec.describe Types::QueryType do
           updateGear(input: {
             id: #{gear.id}
             itemName: "water",
-            userId: #{user.id}
+            description: "Its wet"
           }){
             gear {
               itemName
