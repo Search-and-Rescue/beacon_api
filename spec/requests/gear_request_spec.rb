@@ -28,7 +28,7 @@ describe "User's Gear" do
     expect(response).to be_successful
     expect(gear[0][:itemName]).to eq(@food.item_name)
     expect(gear[1][:itemName]).to eq(@sleeping_bag.item_name)
-    expect(gear[1][:itemName]).to eq(@water.item_name)
+    expect(gear[2][:itemName]).to eq(@water.item_name)
   end
 
   it "returns a single piece of gear" do

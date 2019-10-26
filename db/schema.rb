@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_26_182055) do
+ActiveRecord::Schema.define(version: 2019_10_26_035829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,9 +54,9 @@ ActiveRecord::Schema.define(version: 2019_10_26_182055) do
   end
 
   create_table "trip_gears", force: :cascade do |t|
-    t.string "comments"
     t.bigint "trip_id"
     t.bigint "gear_id"
+    t.string "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["gear_id"], name: "index_trip_gears_on_gear_id"
