@@ -2,9 +2,9 @@ FactoryBot.define do
   factory :user do
     name { Faker::Name.unique.name }
     address { Faker::Address.unique.street_address }
-    city { Faker::Address.unique.city }
-    state { Faker::Address.unique.state_abbr }
-    zip { Faker::Number.unique.number(digits: 5) }
+    city { Faker::Address.city }
+    state { Faker::Address.state_abbr }
+    zip { Faker::Number.number(digits: 5) }
     phone { Faker::PhoneNumber.unique.cell_phone }
     email { Faker::Internet.unique.email(name: name) }
     password_digest { Faker::Alphanumeric.unique.alphanumeric(number: 30) }

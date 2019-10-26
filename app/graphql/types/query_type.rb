@@ -55,6 +55,21 @@ module Types
       Gear.find(id)
     end
 
+    def gears
+      Gear.all
+    end
+
+    field :trip_gear, Types::TripGearType, null: true do
+      description "Find all gear on a trip"
+      argument :trip_id, ID, required: true
+    end
+
+    def trip_gear(trip_id:)
+      TripGear.find_by(trip_id: trip_id)
+    end
+
+    def trip_gears
+      TripGear.all
     field :teams, [Types::SearchAndRescueType], null: false
     #Gets all search and rescue teams
     def teams

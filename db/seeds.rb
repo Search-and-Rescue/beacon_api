@@ -64,3 +64,15 @@ end
   contact = user.emergency_contacts.sample
   TripContact.create(emergency_contact_id: contact.id, trip_id: trip.id)
 end
+
+100.times do
+  item = Gear.create(
+    item_name: Faker::Commerce.product_name,
+    user_id: User.find(User.pluck(:id).sample).id
+  )
+  TripGear.create(
+    trip_id: Trip.find(Trip.pluck(:id).sample).id,
+    gear_id: item.id,
+    comments: Faker::ChuckNorris.fact
+  )
+end

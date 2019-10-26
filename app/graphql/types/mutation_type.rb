@@ -1,5 +1,7 @@
 module Types
   class MutationType < Types::BaseObject
+    field :removeGearFromTrip, mutation: Mutations::RemoveGearFromTrip
+    field :addGearToTrip, mutation: Mutations::AddGearToTrip
     field :removeContactFromTrip, mutation: Mutations::RemoveContactFromTrip
     field :addContactToTrip, mutation: Mutations::AddContactToTrip
     field :removeContact, mutation: Mutations::RemoveContact
