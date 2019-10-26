@@ -68,6 +68,7 @@ end
 100.times do
   item = Gear.create(
     item_name: Faker::Commerce.product_name,
+    description: Faker::ChuckNorris.fact,
     user_id: User.find(User.pluck(:id).sample).id
   )
   TripGear.create(
