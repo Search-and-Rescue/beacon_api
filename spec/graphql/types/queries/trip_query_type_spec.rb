@@ -30,5 +30,40 @@ RSpec.describe Types::QueryType do
       trip = SearchAndRescueApiSchema.execute(query).as_json['data']['trip']
       expect(trip['name']).to eq(trip_1.name)
     end
+
+    it "should return a trip that has not checked in and is past notification time" do
+      user = create(:user)
+      20.times do
+        create(:trip)
+      end
+      trip = Trip.create(
+        name: "Maroon Bells",
+        activity_type: Faker::Job.key_skill,
+        starting_point: "Maroon Bells Trailhead",
+        ending_point: Faker::Company.name,
+        start_date: Date.current - 1.day,
+        start_time: Time.current - 12.hours,
+        end_date: Date.current,
+        end_time: Time.current - 6.hours,
+        notification_date: Date.current,
+        notification_time: Time.current - 2.hours,
+        traveling_companions: rand(1..2),
+        user_id: user.id,
+        active: true
+      )
+      query = (
+        %(query {
+          activeTrips {
+            name
+            user {
+              name
+            }
+          }
+        })
+      )
+      results = SearchAndRescueApiSchema.execute(query).as_json['data']['activeTrips']
+      expect(results[0]['name']).to eq(trip.name)
+      expect(results[0]['user']['name']).to eq(user.name)
+    end
   end
 end
