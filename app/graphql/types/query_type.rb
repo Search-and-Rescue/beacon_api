@@ -24,8 +24,12 @@ module Types
       EmergencyContact.find(id)
     end
 
-    field :trips, [Types::TripType], null: true do
-      description "Get all Trips"
+    field :active_trips, [Types::TripType], null: true do
+      description "Get all active trips past notification time"
+    end
+
+    def active_trips
+      Trip.where('notification_time < ? AND notification_date <= ? AND active = ?', Time.current, Date.current, true)
     end
 
     field :trip, Types::TripType, null: true do
@@ -71,7 +75,7 @@ module Types
     def trip_gears
       TripGear.all
     end
-    
+
     field :teams, [Types::SearchAndRescueType], null: false
     #Gets all search and rescue teams
     def teams
