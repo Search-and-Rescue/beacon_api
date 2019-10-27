@@ -10,7 +10,7 @@ module Types
     field :email, String, null: false
     field :password_digest, String, null: true
     field :allergies, String, null: true
-    field :experience_level, Integer, null: true
+    field :experience_level, String, null: true
     field :birth_date, String, null: true
     field :weight, Integer, null: true
     field :height, Integer, null: true
