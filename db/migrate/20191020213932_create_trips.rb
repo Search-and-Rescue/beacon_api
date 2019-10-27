@@ -5,11 +5,11 @@ class CreateTrips < ActiveRecord::Migration[5.2]
       t.string :starting_point
       t.string :ending_point
       t.date :start_date
-      t.time :start_time
+      t.datetime :start_time
       t.date :end_date
-      t.time :end_time
+      t.datetime :end_time
       t.date :notification_date
-      t.time :notification_time
+      t.datetime :notification_time
       t.integer :traveling_companions
       t.references :user, foreign_key: true
 
