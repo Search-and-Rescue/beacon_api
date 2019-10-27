@@ -62,6 +62,7 @@ RSpec.describe Types::QueryType do
         })
       )
       results = SearchAndRescueApiSchema.execute(query).as_json['data']['activeTrips']
+      expect(results.length).to eq(1)
       expect(results[0]['name']).to eq(trip.name)
       expect(results[0]['user']['name']).to eq(user.name)
     end
