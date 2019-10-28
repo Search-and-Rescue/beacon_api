@@ -58,5 +58,31 @@ RSpec.describe Types::QueryType do
       trip.reload
       expect(trip.active).to eq(false)
     end
+
+    it "should add a vehicle to a trip" do
+      trip = create(:trip)
+      vehicle = create(:vehicle)
+      mutation = (
+        %(mutation{
+        addVehicleToTrip(input: {
+          tripId: #{trip.id}
+          vehicleId: #{vehicle.id}
+          }) {
+            trip{
+              id
+              name
+            }
+            vehicle{
+              id
+              make
+              model
+            }
+          }
+        })
+      )
+      SearchAndRescueApiSchema.execute(mutation).as_json['data']
+      trip.reload
+      expect(trip.vehicle_id).to eq(vehicle.id)
+    end
   end
 end
