@@ -140,4 +140,33 @@ describe "User's Trips'" do
     trip.reload
     expect(trip.active).to eq(false)
   end
+
+  it "adds a vehicle to a trip" do
+    trip = create(:trip)
+    vehicle = create(:vehicle)
+    mutation = (
+      %(mutation{
+      addVehicleToTrip(input: {
+        tripId: #{trip.id}
+        vehicleId: #{vehicle.id}
+        }) {
+          trip{
+            id
+            name
+          }
+          vehicle{
+            id
+            make
+            model
+          }
+        }
+      })
+    )
+    post "/graphql", params: { "query" => mutation }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+    results = JSON.parse(response.body, symbolize_names: true)[:data][:addVehicleToTrip]
+    expect(results[:trip][:id].to_i).to eq(trip.id)
+    expect(results[:vehicle][:id].to_i).to eq(vehicle.id)
+    trip.reload
+    expect(trip.vehicle_id).to eq(vehicle.id)
+  end
 end

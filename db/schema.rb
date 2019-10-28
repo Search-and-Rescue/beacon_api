@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_26_215624) do
+ActiveRecord::Schema.define(version: 2019_10_28_180437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,7 +80,9 @@ ActiveRecord::Schema.define(version: 2019_10_26_215624) do
     t.datetime "updated_at", null: false
     t.string "activity_type"
     t.boolean "active", default: true
+    t.bigint "vehicle_id"
     t.index ["user_id"], name: "index_trips_on_user_id"
+    t.index ["vehicle_id"], name: "index_trips_on_vehicle_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -125,5 +127,6 @@ ActiveRecord::Schema.define(version: 2019_10_26_215624) do
   add_foreign_key "trip_gears", "gears"
   add_foreign_key "trip_gears", "trips"
   add_foreign_key "trips", "users"
+  add_foreign_key "trips", "vehicles"
   add_foreign_key "vehicles", "users"
 end
