@@ -38,5 +38,25 @@ RSpec.describe Types::QueryType do
       updated_trip = SearchAndRescueApiSchema.execute(mutation).as_json['data']['updateTrip']
       expect(updated_trip.length).to eq(1)
     end
+
+    it "can end a trip" do
+      trip = create(:trip)
+
+      mutation = (
+        %(mutation{
+          endTrip(input: {
+            id: #{trip.id}
+          }) {
+            trip{
+              name
+              active
+            }
+          }
+        })
+      )
+      results = SearchAndRescueApiSchema.execute(mutation).as_json['data']['endTrip']
+      trip.reload
+      expect(trip.active).to eq(false)
+    end
   end
 end
