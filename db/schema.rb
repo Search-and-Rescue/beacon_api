@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2019_10_26_215624) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "activity_type"
-    t.boolean "active", default: false
+    t.boolean "active", default: true
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
 

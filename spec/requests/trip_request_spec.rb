@@ -118,4 +118,26 @@ describe "User's Trips'" do
     expect(results[0][:name]).to eq(trip.name)
     expect(results[0][:user][:name]).to eq(@user.name)
   end
+
+  it "should set a trips active status to false" do
+    trip = create(:trip)
+    query = (
+      %(mutation{
+        endTrip(input: {
+          id: #{trip.id}
+        }) {
+          trip{
+            name
+            active
+          }
+        }
+      })
+    )
+    post "/graphql", params: { "query" => query }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+    results = JSON.parse(response.body, symbolize_names: true)[:data][:endTrip]
+    expect(results[:trip][:name]).to eq(trip.name)
+    expect(results[:trip][:active]).to eq(false)
+    trip.reload
+    expect(trip.active).to eq(false)
+  end
 end
