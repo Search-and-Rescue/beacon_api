@@ -8,7 +8,7 @@ FactoryBot.define do
     phone { Faker::PhoneNumber.unique.cell_phone }
     email { Faker::Internet.unique.email(name: name) }
     password_digest { Faker::Alphanumeric.unique.alphanumeric(number: 30) }
-    allergies { Faker::Food.unique.fruits }
+    allergies { Faker::Food.fruits }
     experience_level { rand(0...2) }
     birth_date { Faker::Date.between(from: 60.years.ago, to: 18.years.ago) }
     weight { rand(100..300) }

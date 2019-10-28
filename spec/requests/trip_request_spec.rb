@@ -83,4 +83,39 @@ describe "User's Trips'" do
 
     expect(response).to be_successful
   end
+
+  it "returns trips that are active and not checked in" do
+    trip = Trip.create(
+      name: "Maroon Bells",
+      activity_type: Faker::Job.key_skill,
+      starting_point: "Maroon Bells Trailhead",
+      ending_point: Faker::Company.name,
+      start_date: Date.current - 1.day,
+      start_time: Time.current - 12.hours,
+      end_date: Date.current,
+      end_time: Time.current - 6.hours,
+      notification_date: Date.current,
+      notification_time: Time.current - 2.hours,
+      traveling_companions: rand(1..2),
+      user_id: @user.id,
+      active: true
+    )
+    query = (
+      %(query {
+        activeTrips {
+          name
+          user {
+            name
+          }
+        }
+      })
+    )
+    post "/graphql", params: { "query" => query }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+    results = JSON.parse(response.body, symbolize_names: true)[:data][:activeTrips]
+
+    expect(response).to be_successful
+    expect(results.length).to eq(1)
+    expect(results[0][:name]).to eq(trip.name)
+    expect(results[0][:user][:name]).to eq(@user.name)
+  end
 end

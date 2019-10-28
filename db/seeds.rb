@@ -57,10 +57,11 @@ end
     start_time: start_date,
     end_date: end_date,
     end_time: end_date,
-    notification_date: end_date + 1,
-    notification_time: end_date + 1 ,
+    notification_date: end_date + 1.day,
+    notification_time: end_date + 1.hour,
     traveling_companions: rand(1..2),
-    user_id: User.find(User.pluck(:id).sample).id
+    user_id: User.find(User.pluck(:id).sample).id,
+    active: Faker::Boolean.boolean
   )
   user = User.find(trip.user_id)
   contact = user.emergency_contacts.sample
@@ -77,5 +78,25 @@ end
     trip_id: Trip.find(Trip.pluck(:id).sample).id,
     gear_id: item.id,
     comments: Faker::ChuckNorris.fact
+  )
+end
+
+# Users that have not "checked in"
+2.times do
+  name = Faker::Company.name
+  Trip.create(
+    name: name,
+    activity_type: Faker::Job.key_skill,
+    starting_point: name,
+    ending_point: Faker::Company.name,
+    start_date: Date.current - 1.day,
+    start_time: Time.current - 12.hours,
+    end_date: Date.current,
+    end_time: Time.current - 6.hours,
+    notification_date: Date.current,
+    notification_time: Time.current - 2.hours,
+    traveling_companions: rand(1..2),
+    user_id: User.find(User.pluck(:id).sample).id,
+    active: true
   )
 end
