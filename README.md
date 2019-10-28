@@ -153,6 +153,46 @@ mutation {
 } 
 ```
 
+### Add To Trip Requests
+
+**Add Gear to a Trip**
+```
+mutation{
+  addGearToTrip(input: {
+    tripId: 1
+    gearId: 1
+    comments: "Comment here"
+  }) {
+    tripGear{
+      comments
+      gear{
+        itemName
+      }
+      trip{
+        name
+      }
+    }
+  }
+}
+```
+
+**Add Vehicle to a Trip**
+```
+mutation{
+  addVehicleToTrip(input: {
+    tripId: 1
+    vehicleId: 1
+  }) {
+    trip{
+      name
+    }
+    vehicle{
+      make
+    }
+  }
+}
+```
+
 ### Vehicle Requests
 
 **All Vehicles for a User:**
