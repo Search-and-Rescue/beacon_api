@@ -12,6 +12,7 @@ module Types
     field :notification_date, String, null: true
     field :notification_time, String, null: true
     field :traveling_companions, Integer, null: true
+    field :active, Boolean, null: false
 
     field :user, Types::UserType, null: false
     field :trip_gears, [Types::TripGearType], null: true
