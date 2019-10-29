@@ -18,5 +18,13 @@ module Types
     field :trip_gears, [Types::TripGearType], null: true
     field :gears, [Types::GearType], null: true
     field :emergency_contacts, [Types::EmergencyContactType], null: true
+    field :nearby_sar_teams, [Types::SearchAndRescueType], null: true
+
+    def nearby_sar_teams
+      coordinates = GoogleSearchFacade.new(object.starting_point).coordinates
+      lat = coordinates[:lat]
+      lng = coordinates[:lng]
+      SearchAndRescue.near([lat, lng], 100)
+    end
   end
 end

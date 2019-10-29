@@ -1,0 +1,265 @@
+[
+    {
+        "place_id": 197597979,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 148838,
+        "boundingbox": [
+            "-14.7608358",
+            "71.6048217",
+            "-180",
+            "180"
+        ],
+        "lat": "39.7837304",
+        "lon": "-100.4458825",
+        "display_name": "United States",
+        "class": "boundary",
+        "type": "administrative",
+        "importance": 0.944692348397998,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png",
+        "address": {
+            "country": "United States",
+            "country_code": "us"
+        }
+    },
+    {
+        "place_id": 197509751,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 106776,
+        "boundingbox": [
+            "45.070532",
+            "45.1241103",
+            "6.041453",
+            "6.1209512"
+        ],
+        "lat": "45.0820855",
+        "lon": "6.0596448",
+        "display_name": "Huez, Grenoble, Isère, Auvergne-Rhône-Alpes, Metropolitan France, 38750, France",
+        "class": "boundary",
+        "type": "administrative",
+        "importance": 0.549518239663369,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png",
+        "address": {
+            "city": "Huez",
+            "county": "Grenoble",
+            "state": "Auvergne-Rhône-Alpes",
+            "country": "France",
+            "postcode": "38750",
+            "country_code": "fr"
+        }
+    },
+    {
+        "place_id": 198322877,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 442452,
+        "boundingbox": [
+            "50.0769499",
+            "51.0557036",
+            "12.9403486",
+            "14.6528489"
+        ],
+        "lat": "50.5663266",
+        "lon": "13.8206705395666",
+        "display_name": "Ústecký kraj, Northwest, Czech Republic",
+        "class": "boundary",
+        "type": "administrative",
+        "importance": 0.45888541950177,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png",
+        "address": {
+            "county": "Ústecký kraj",
+            "state": "Northwest",
+            "country": "Czech Republic",
+            "country_code": "cz"
+        }
+    },
+    {
+        "place_id": 251627956,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 9258333,
+        "boundingbox": [
+            "53.1021507",
+            "53.158317",
+            "27.18318",
+            "27.2067463"
+        ],
+        "lat": "53.1276816",
+        "lon": "27.1996459",
+        "display_name": "Ус, Kapyl District, Minsk Region, Belarus",
+        "class": "waterway",
+        "type": "river",
+        "importance": 0.44999999999999996,
+        "address": {
+            "river": "Ус",
+            "county": "Kapyl District",
+            "state": "Minsk Region",
+            "country": "Belarus",
+            "country_code": "by"
+        }
+    },
+    {
+        "place_id": 198785002,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 357461,
+        "boundingbox": [
+            "49.0859074",
+            "49.1247898",
+            "1.9218464",
+            "1.9905026"
+        ],
+        "lat": "49.1009451",
+        "lon": "1.9672466",
+        "display_name": "Us, Pontoise, Val-d'Oise, Ile-de-France, Metropolitan France, 95450, France",
+        "class": "boundary",
+        "type": "administrative",
+        "importance": 0.44394721803719606,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png",
+        "address": {
+            "city": "Us",
+            "county": "Pontoise",
+            "state": "Ile-de-France",
+            "country": "France",
+            "postcode": "95450",
+            "country_code": "fr"
+        }
+    },
+    {
+        "place_id": 198830758,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 3657374,
+        "boundingbox": [
+            "50.2591922",
+            "50.2625261",
+            "19.0253765",
+            "19.0338102"
+        ],
+        "lat": "50.26083925",
+        "lon": "19.0290244421095",
+        "display_name": "University of Silesia in Katowice, Bankowa, Śródmieście, Katowice, Górnośląsko-Zagłębiowska Metropolia, Silesian Voivodeship, 40-007, Poland",
+        "class": "amenity",
+        "type": "university",
+        "importance": 0.443563506885412,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/education_university.p.20.png",
+        "address": {
+            "university": "University of Silesia in Katowice",
+            "pedestrian": "Bankowa",
+            "neighbourhood": "Śródmieście",
+            "city_district": "Śródmieście",
+            "city": "Katowice",
+            "county": "Katowice",
+            "state_district": "Górnośląsko-Zagłębiowska Metropolia",
+            "state": "Silesian Voivodeship",
+            "postcode": "40-007",
+            "country": "Poland",
+            "country_code": "pl"
+        }
+    },
+    {
+        "place_id": 112780507,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 159222207,
+        "boundingbox": [
+            "63.3282089",
+            "63.3636545",
+            "48.7300037",
+            "48.763609"
+        ],
+        "lat": "63.3436601",
+        "lon": "48.747314",
+        "display_name": "Ус, городское поселение Усогорск, Udorsky District, Komi Republic, Northwestern Federal District, Russia",
+        "class": "waterway",
+        "type": "river",
+        "importance": 0.42500000000000004,
+        "address": {
+            "river": "Ус",
+            "city": "городское поселение Усогорск",
+            "county": "Udorsky District",
+            "state": "Komi Republic",
+            "country": "Russia",
+            "country_code": "ru"
+        }
+    },
+    {
+        "place_id": 111955240,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 159222166,
+        "boundingbox": [
+            "63.4038893",
+            "63.4409123",
+            "48.6601585",
+            "48.702389"
+        ],
+        "lat": "63.421819",
+        "lon": "48.6815813",
+        "display_name": "Ус, городское поселение Усогорск, Udorsky District, Komi Republic, Northwestern Federal District, 169270, Russia",
+        "class": "waterway",
+        "type": "river",
+        "importance": 0.42500000000000004,
+        "address": {
+            "river": "Ус",
+            "city": "городское поселение Усогорск",
+            "county": "Udorsky District",
+            "state": "Komi Republic",
+            "postcode": "169270",
+            "country": "Russia",
+            "country_code": "ru"
+        }
+    },
+    {
+        "place_id": 197863893,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 181921,
+        "boundingbox": [
+            "52.062498",
+            "52.8359969",
+            "92.2501385",
+            "93.8869297"
+        ],
+        "lat": "52.3398125",
+        "lon": "93.1603467",
+        "display_name": "Us River, Yermakovsky Rayon, Krasnoyarsk Krai, Siberian Federal District, Russia",
+        "class": "waterway",
+        "type": "river",
+        "importance": 0.38891132353959,
+        "address": {
+            "river": "Us River",
+            "county": "Yermakovsky Rayon",
+            "state": "Krasnoyarsk Krai",
+            "country": "Russia",
+            "country_code": "ru"
+        }
+    },
+    {
+        "place_id": 31059340,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 2756612002,
+        "boundingbox": [
+            "46.7987918",
+            "46.8387918",
+            "5.2614186",
+            "5.3014186"
+        ],
+        "lat": "46.8187918",
+        "lon": "5.2814186",
+        "display_name": "Us, Louhans, Saône-et-Loire, Bourgogne-Franche-Comté, Metropolitan France, France",
+        "class": "place",
+        "type": "hamlet",
+        "importance": 0.375,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png",
+        "address": {
+            "hamlet": "Us",
+            "county": "Louhans",
+            "state": "Bourgogne-Franche-Comté",
+            "country": "France",
+            "country_code": "fr"
+        }
+    }
+]

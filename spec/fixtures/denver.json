@@ -1,0 +1,111 @@
+[
+    {
+        "place_id": 198230466,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 253750,
+        "boundingbox": [
+            "39.6143154",
+            "39.9142087",
+            "-105.1098845",
+            "-104.5996889"
+        ],
+        "lat": "39.7392364",
+        "lon": "-104.9848623",
+        "display_name": "Denver, Denver County, Colorado, United States of America",
+        "class": "place",
+        "type": "city",
+        "importance": 0.864914633112273,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_place_city.p.20.png",
+        "address": {
+            "city": "Denver",
+            "county": "Denver County",
+            "state": "Colorado",
+            "country": "United States of America",
+            "country_code": "us"
+        }
+    },
+    {
+        "place_id": 198901523,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 1411339,
+        "boundingbox": [
+            "39.6143154",
+            "39.9142087",
+            "-105.1098845",
+            "-104.5996889"
+        ],
+        "lat": "39.7348381",
+        "lon": "-104.9653271",
+        "display_name": "Denver County, Colorado, United States",
+        "class": "boundary",
+        "type": "administrative",
+        "importance": 0.854914633112273,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png",
+        "address": {
+            "county": "Denver County",
+            "state": "Colorado",
+            "country": "United States",
+            "country_code": "us"
+        }
+    },
+    {
+        "place_id": 70547376,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 7690716,
+        "boundingbox": [
+            "38.67294",
+            "38.6737758",
+            "-104.7033917",
+            "-104.702767"
+        ],
+        "lat": "38.67294",
+        "lon": "-104.702767",
+        "display_name": "Denver, Fountain, El Paso County, Colorado, 8017, United States",
+        "class": "highway",
+        "type": "service",
+        "importance": 0.28500000000000003,
+        "address": {
+            "road": "Denver",
+            "city": "Fountain",
+            "county": "El Paso County",
+            "state": "Colorado",
+            "postcode": "8017",
+            "country": "United States",
+            "country_code": "us"
+        }
+    },
+    {
+        "place_id": 265315766,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 6528478626,
+        "boundingbox": [
+            "39.754736",
+            "39.754836",
+            "-104.9871837",
+            "-104.9870837"
+        ],
+        "lat": "39.754786",
+        "lon": "-104.9871337",
+        "display_name": "Denver, 2314, Broadway, Five Points, Denver, Denver County, Colorado, 80294, United States",
+        "class": "tourism",
+        "type": "artwork",
+        "importance": 0.21100000000000002,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/tourist_art_gallery2.p.20.png",
+        "address": {
+            "artwork": "Denver",
+            "house_number": "2314",
+            "road": "Broadway",
+            "neighbourhood": "Five Points",
+            "city": "Denver",
+            "county": "Denver County",
+            "state": "Colorado",
+            "postcode": "80294",
+            "country": "United States",
+            "country_code": "us"
+        }
+    }
+]

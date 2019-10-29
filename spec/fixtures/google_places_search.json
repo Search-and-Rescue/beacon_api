@@ -1,0 +1,24 @@
+{
+   "candidates": [
+      {
+         "geometry": {
+            "location": {
+               "lat": 39.0985569,
+               "lng": -106.9406518
+            },
+            "viewport": {
+               "northeast": {
+                  "lat": 39.09989682989273,
+                  "lng": -106.9393029701073
+               },
+               "southwest": {
+                  "lat": 39.09719717010728,
+                  "lng": -106.9420026298927
+               }
+            }
+         },
+         "name": "Maroon-Snowmass Trailhead"
+      }
+   ],
+   "status": "OK"
+}
