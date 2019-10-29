@@ -153,6 +153,20 @@ mutation {
 } 
 ```
 
+**Remove a Trip**
+```
+mutation{
+  removeTrip(input: {
+    id: 1
+  }) {
+    trip{
+      id
+      name
+    }
+  }
+}
+```
+
 ### Add To Trip Requests
 
 **Add Gear to a Trip**
