@@ -14,13 +14,13 @@ RSpec.describe Types::QueryType do
   end
 
   it "should return nearby SAR teams to a trips starting point" do
-    trip = create(:trip, name: "Maroon Bells", starting_point: "Maroon Bells Trailhead")
+    trip = create(:trip, name: "Four Pass Loop", starting_point: "Maroon Snowmass Trailhead")
     team_1 = SearchAndRescue.create(
-      team_name: "Chaffee County Sheriff's Patrol",
-      county: "Chaffee",
-      contact: "Sherrif's Office",
-      contact_number: "719-539-2596",
-      city: "Poncha Springs",
+      team_name: "Mountain Rescue Aspen",
+      county: "Pitkin",
+      contact: "SAR",
+      contact_number: "970-920-5310",
+      city: "Aspen",
       state: "CO"
     )
     team_2 = SearchAndRescue.create(
