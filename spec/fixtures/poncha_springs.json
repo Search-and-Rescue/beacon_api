@@ -1,0 +1,54 @@
+[
+    {
+        "place_id": 238717658,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 8676599,
+        "boundingbox": [
+            "38.4994637",
+            "38.528501",
+            "-106.1344503",
+            "-106.0513179"
+        ],
+        "lat": "38.5127752",
+        "lon": "-106.0772384",
+        "display_name": "Poncha Springs, Chaffee County, Colorado, United States",
+        "class": "boundary",
+        "type": "administrative",
+        "importance": 0.65,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png",
+        "address": {
+            "city": "Poncha Springs",
+            "county": "Chaffee County",
+            "state": "Colorado",
+            "country": "United States",
+            "country_code": "us"
+        }
+    },
+    {
+        "place_id": 84221073,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 33153414,
+        "boundingbox": [
+            "38.4994637",
+            "38.528501",
+            "-106.1344503",
+            "-106.0513179"
+        ],
+        "lat": "38.5127752",
+        "lon": "-106.0772384",
+        "display_name": "Poncha Springs, Chaffee County, Colorado, United States",
+        "class": "boundary",
+        "type": "administrative",
+        "importance": 0.542383665382304,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png",
+        "address": {
+            "city": "Poncha Springs",
+            "county": "Chaffee County",
+            "state": "Colorado",
+            "country": "United States",
+            "country_code": "us"
+        }
+    }
+]

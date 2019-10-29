@@ -1,0 +1,214 @@
+[
+    {
+        "place_id": 197744483,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 112343,
+        "boundingbox": [
+            "39.3112713",
+            "39.4349503",
+            "-104.9198012",
+            "-104.7612849"
+        ],
+        "lat": "39.3724232",
+        "lon": "-104.8586706",
+        "display_name": "Castle Rock, Douglas County, Colorado, United States",
+        "class": "boundary",
+        "type": "administrative",
+        "importance": 0.755408184360185,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png",
+        "address": {
+            "city": "Castle Rock",
+            "county": "Douglas County",
+            "state": "Colorado",
+            "country": "United States",
+            "country_code": "us"
+        }
+    },
+    {
+        "place_id": 3220851,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 358926875,
+        "boundingbox": [
+            "38.8277232",
+            "38.8278232",
+            "-105.9808962",
+            "-105.9807962"
+        ],
+        "lat": "38.8277732",
+        "lon": "-105.9808462",
+        "display_name": "Castle Rock, Chaffee County, Colorado, United States",
+        "class": "natural",
+        "type": "peak",
+        "importance": 0.6000000000000001,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_peak.p.20.png",
+        "address": {
+            "peak": "Castle Rock",
+            "county": "Chaffee County",
+            "state": "Colorado",
+            "country": "United States",
+            "country_code": "us"
+        }
+    },
+    {
+        "place_id": 48848982,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 3750979388,
+        "boundingbox": [
+            "38.6418757",
+            "38.6419757",
+            "-107.4661706",
+            "-107.4660706"
+        ],
+        "lat": "38.6419257",
+        "lon": "-107.4661206",
+        "display_name": "Castle Rock, Gunnison County, Colorado, United States",
+        "class": "natural",
+        "type": "peak",
+        "importance": 0.6000000000000001,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_peak.p.20.png",
+        "address": {
+            "peak": "Castle Rock",
+            "county": "Gunnison County",
+            "state": "Colorado",
+            "country": "United States",
+            "country_code": "us"
+        }
+    },
+    {
+        "place_id": 3219225,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 358923669,
+        "boundingbox": [
+            "37.6007812",
+            "37.6008812",
+            "-107.830672",
+            "-107.830572"
+        ],
+        "lat": "37.6008312",
+        "lon": "-107.830622",
+        "display_name": "Castle Rock, La Plata County, Colorado, United States",
+        "class": "natural",
+        "type": "peak",
+        "importance": 0.6000000000000001,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_peak.p.20.png",
+        "address": {
+            "peak": "Castle Rock",
+            "county": "La Plata County",
+            "state": "Colorado",
+            "country": "United States",
+            "country_code": "us"
+        }
+    },
+    {
+        "place_id": 3172966,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 358908864,
+        "boundingbox": [
+            "39.2849293",
+            "39.2850293",
+            "-108.2820787",
+            "-108.2819787"
+        ],
+        "lat": "39.2849793",
+        "lon": "-108.2820287",
+        "display_name": "Castle Rock, Grand Junction, Mesa County, Colorado, United States",
+        "class": "natural",
+        "type": "peak",
+        "importance": 0.6000000000000001,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_peak.p.20.png",
+        "address": {
+            "peak": "Castle Rock",
+            "city": "Grand Junction",
+            "county": "Mesa County",
+            "state": "Colorado",
+            "country": "United States",
+            "country_code": "us"
+        }
+    },
+    {
+        "place_id": 3225544,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 358908786,
+        "boundingbox": [
+            "39.4465941",
+            "39.4466941",
+            "-108.4390291",
+            "-108.4389291"
+        ],
+        "lat": "39.4466441",
+        "lon": "-108.4389791",
+        "display_name": "Castle Rock, Garfield County, Colorado, United States",
+        "class": "natural",
+        "type": "peak",
+        "importance": 0.6000000000000001,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_peak.p.20.png",
+        "address": {
+            "peak": "Castle Rock",
+            "county": "Garfield County",
+            "state": "Colorado",
+            "country": "United States",
+            "country_code": "us"
+        }
+    },
+    {
+        "place_id": 3220219,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 358921542,
+        "boundingbox": [
+            "39.3787674",
+            "39.3788674",
+            "-104.8568365",
+            "-104.8567365"
+        ],
+        "lat": "39.3788174",
+        "lon": "-104.8567865",
+        "display_name": "Castle Rock, John Emerson Summit Trail, Castle Rock, Douglas County, Colorado, 80104, United States",
+        "class": "tourism",
+        "type": "attraction",
+        "importance": 0.30100000000000005,
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_point_of_interest.p.20.png",
+        "address": {
+            "attraction": "Castle Rock",
+            "footway": "John Emerson Summit Trail",
+            "town": "Castle Rock",
+            "county": "Douglas County",
+            "state": "Colorado",
+            "postcode": "80104",
+            "country": "United States",
+            "country_code": "us"
+        }
+    },
+    {
+        "place_id": 3203927,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 358912041,
+        "boundingbox": [
+            "40.3424344",
+            "40.3425344",
+            "-105.6936669",
+            "-105.6935669"
+        ],
+        "lat": "40.3424844",
+        "lon": "-105.6936169",
+        "display_name": "Castle Rock, campsite access, Larimer County, Colorado, United States",
+        "class": "natural",
+        "type": "cliff",
+        "importance": 0.30100000000000005,
+        "address": {
+            "cliff": "Castle Rock",
+            "footway": "campsite access",
+            "county": "Larimer County",
+            "state": "Colorado",
+            "country": "United States",
+            "country_code": "us"
+        }
+    }
+]
