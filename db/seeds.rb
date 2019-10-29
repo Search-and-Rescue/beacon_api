@@ -61,7 +61,7 @@ end
     notification_time: end_date + 1.hour,
     traveling_companions: rand(1..2),
     user_id: User.find(User.pluck(:id).sample).id,
-    active: Faker::Boolean.boolean
+    active: false
   )
   user = User.find(trip.user_id)
   contact = user.emergency_contacts.sample
