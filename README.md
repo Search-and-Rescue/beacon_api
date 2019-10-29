@@ -5,11 +5,11 @@ This API servers as the backend for Beacon, a search and rescue app.  Built with
 ### Setup
 To setup locally, run the following commands:
  - `git clone https://github.com/Search-and-Rescue/search_and_rescue_api.git`
- - `cd search_and_rescupe_api`
+ - `cd search_and_rescue_api`
  - `bundle install`
  - `bundle exec rake import`
  - `rails s`
- - Navigate to `localhost:300/graphiql` to view the GraphiQL, an in-browser IDE for exploring the API
+ - Navigate to `localhost:3000/graphiql` to view the GraphiQL, an in-browser IDE for exploring the API
 
 ### Endpoint
 All requests should be made with a `POST` request to `/graphql?query=[request]`.
@@ -191,7 +191,7 @@ mutation {
 
 **Remove a Trip**
 ```
-mutation{
+mutation {
   removeTrip(input: {
     id: 1
   }) {
@@ -207,7 +207,7 @@ mutation{
 
 **Add Gear to a Trip**
 ```
-mutation{
+mutation {
   addGearToTrip(input: {
     tripId: 1
     gearId: 1
@@ -228,7 +228,7 @@ mutation{
 
 **Add Vehicle to a Trip**
 ```
-mutation{
+mutation {
   addVehicleToTrip(input: {
     tripId: 1
     vehicleId: 1
@@ -245,7 +245,7 @@ mutation{
 
 **Add Contact to a Trip**
 ```
-mutation{
+mutation {
   addContactToTrip(input: {
     emergencyContactId: 5
     tripId: 2
@@ -260,11 +260,11 @@ mutation{
   }
 }
 ```
-### Contact Requests
+### Emergency Contact Requests
 
 **Single User + Emergency Contacts:**
 ```
-{
+query {
   user(id: 1){
     id
     name
@@ -364,7 +364,7 @@ query {
 ```
 **Single Vehicle:**
 ```
-{
+query {
   vehicle(id: 1){
     make
     model
@@ -499,6 +499,36 @@ mutation {
     gear {
       itemName
     }
+  }
+}
+```
+
+### Search and Rescue Teams
+
+**Get All Teams:
+```
+query {
+  teams {
+    teamName
+    county
+    contact
+    contactNumber
+    city
+    state
+  }
+}
+```
+
+**Get Single Team:**
+```
+query {
+  team(id: 1) {
+    teamName
+    county
+    contact
+    contactNumber
+    city
+    state
   }
 }
 ```
