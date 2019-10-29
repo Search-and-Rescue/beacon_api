@@ -1,8 +1,13 @@
 require 'rails_helper'
-WebMock.allow_net_connect!
 
 RSpec.describe Types::QueryType do
   describe 'search and rescue model' do
+    before :each do
+      denver = File.open('./spec/fixtures/denver.json')
+      stub_request(:get, "https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=Denver,%20CO,%20US").
+        to_return(status: 200, body: denver)
+    end
+
     it "should return all search and rescue teams" do
       create_pair(:search_and_rescue)
         query = (
