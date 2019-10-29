@@ -24,7 +24,7 @@ module Types
       coordinates = GoogleSearchFacade.new(object.starting_point).coordinates
       lat = coordinates[:lat]
       lng = coordinates[:lng]
-      SearchAndRescue.near([lat, lng], 100)
+      SearchAndRescue.near([lat, lng], 30)
     end
   end
 end
