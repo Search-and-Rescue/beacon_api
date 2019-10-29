@@ -169,4 +169,24 @@ describe "User's Trips'" do
     trip.reload
     expect(trip.vehicle_id).to eq(vehicle.id)
   end
+
+  it "removes a trip from the database" do
+    trip = create(:trip)
+
+    mutation = (
+      %(mutation{
+        removeTrip(input: {
+          id: #{trip.id}
+        }) {
+          trip{
+            name
+          }
+        }
+      })
+    )
+    post "/graphql", params: { "query" => mutation }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+    results = JSON.parse(response.body, symbolize_names: true)[:data][:removeTrip]
+    expect(results[:trip][:name]).to eq(trip.name)
+    expect(Trip.exists?(trip.id)).to eq(false)
+  end
 end
