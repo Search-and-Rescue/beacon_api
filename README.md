@@ -18,7 +18,7 @@ All requests should be made with a `POST` request to `/graphql?query=[request]`.
 
 **All Users:**
 ```
-query{
+query {
   users{
     id
     name
@@ -29,7 +29,7 @@ query{
 
 **Get Single User:**
 ```
-query{
+query {
   user(id: 1){
     id
     name
@@ -90,9 +90,6 @@ mutation {
   } 
 }
 ```
-
-```
-
 
 ### Trip Requests
 
@@ -273,6 +270,71 @@ mutation{
     name
     email
     emergencyContacts{
+      id
+      name
+      phone
+      email
+    }
+  }
+}
+```
+
+**Get Single Emergency Contact:**
+```
+query {
+  contact(id: 1){
+    name
+    phone
+    email
+    }
+  }
+}
+```
+
+**Add Emergency Contact**
+```
+mutation {
+  createContact(input: {
+    name: "name"
+    phone: "phone"
+    email: "email@example.com"
+    userId: 1
+  }) {
+    emergencyContact {
+      id
+      name
+      phone
+      email
+    }
+  }
+}
+```
+
+**Update Emergency Contact**
+```
+mutation {
+   updateContact(input: {
+       id: 1
+       userId: 1
+       name: "name"
+       phone: "phone"
+       email: "email@example.com"
+  }) {
+    emergencyContact {
+       name
+       phone
+       email
+    }
+  }
+}
+```
+
+**Remove Emergency Contact**
+```
+mutation {
+  removeContact( input: {
+    id: 1 }){
+    contact {
       id
       name
       phone
