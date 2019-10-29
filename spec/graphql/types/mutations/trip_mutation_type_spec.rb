@@ -84,5 +84,24 @@ RSpec.describe Types::QueryType do
       trip.reload
       expect(trip.vehicle_id).to eq(vehicle.id)
     end
+
+    it "should remove a trip from the database" do
+      trip = create(:trip)
+
+      mutation = (
+        %(mutation{
+          removeTrip(input: {
+            id: #{trip.id}
+          }) {
+            trip{
+              name
+            }
+          }
+        })
+      )
+      results = SearchAndRescueApiSchema.execute(mutation).as_json['data']['removeTrip']
+      expect(results['trip']['name']).to eq(trip.name)
+      expect(Trip.exists?(trip.id)).to eq(false)
+    end
   end
 end

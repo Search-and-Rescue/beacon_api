@@ -1,5 +1,6 @@
 module Types
   class MutationType < Types::BaseObject
+    field :removeTrip, mutation: Mutations::RemoveTrip
     field :addVehicleToTrip, mutation: Mutations::AddVehicleToTrip
     field :endTrip, mutation: Mutations::EndTrip
     field :removeGearFromTrip, mutation: Mutations::RemoveGearFromTrip

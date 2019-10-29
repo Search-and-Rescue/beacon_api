@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :trips
+  has_many :trips, dependent: :destroy
   has_many :emergency_contacts
   has_many :vehicles
   has_many :gear
