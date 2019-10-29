@@ -1,4 +1,5 @@
 require 'rails_helper'
+WebMock.allow_net_connect!
 
 RSpec.describe Types::QueryType do
   describe "trip queries" do

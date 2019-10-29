@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Types::QueryType do
   before :each do
-    # WebMock.allow_net_connect!
     places_search = File.open('./spec/fixtures/google_places_search.json')
     stub_request(:get, "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=#{ENV['GOOGLE_API_KEY']}&input=Maroon Bells Trailhead&inputtype=textquery&fields=name,geometry").
       to_return(status: 200, body: places_search)

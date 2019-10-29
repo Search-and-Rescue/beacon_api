@@ -1,4 +1,5 @@
 require 'rails_helper'
+WebMock.allow_net_connect!
 
 RSpec.describe SearchAndRescue, type: :model do
   describe 'Validations' do
