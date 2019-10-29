@@ -32,12 +32,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # Faking and seeding database
 gem 'faker'
-
 # Environment Variable storage
 gem 'figaro'
-
 # HTTP Client
 gem 'faraday'
+# Geocoder
+gem 'geocoder'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
