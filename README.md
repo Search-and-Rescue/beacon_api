@@ -193,6 +193,24 @@ mutation{
 }
 ```
 
+**Add Contact to a Trip**
+```
+mutation{
+  addContactToTrip(input: {
+    emergencyContactId: 5
+    tripId: 2
+  }) {
+    trip{
+      name
+    }
+    emergencyContact{
+      name
+      phone
+    }
+  }
+}
+```
+
 ### Vehicle Requests
 
 **All Vehicles for a User:**
