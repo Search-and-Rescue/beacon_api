@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Types::QueryType do
   describe 'search and rescue model' do
-    it "should return all seach and rescue teams" do
+    it "should return all search and rescue teams" do
       create_pair(:search_and_rescue)
         query = (
           %(query {
