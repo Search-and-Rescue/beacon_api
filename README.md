@@ -18,7 +18,7 @@ All requests should be made with a `POST` request to `/graphql?query=[request]`.
 
 **All Users:**
 ```
-{
+query{
   users{
     id
     name
@@ -27,33 +27,72 @@ All requests should be made with a `POST` request to `/graphql?query=[request]`.
 }
 ```
 
-**Single User:**
+**Get Single User:**
 ```
-{
+query{
   user(id: 1){
     id
     name
+    email
+    city
+    state
     email
   }
 }
 ```
 
-**Single User + Emergency Contacts:**
+**Create User:**
 ```
-{
-  user(id: 1){
-    id
-    name
-    email
-    emergencyContacts{
+mutation {
+  createUser( input: {
+    id: 1
+    name: "name"
+    address: "address"
+    city: "city"
+    state: "state"
+    zip: zip
+    email: "email@example.com"
+  }) {
+    user {
       id
       name
-      phone
+      address
+      city
+      state
+      zip
       email
     }
-  }
+  } 
 }
 ```
+
+**Update User:**
+```
+mutation {
+  updateUser( input: {
+    id: 1
+    name: "name"
+    address: "address"
+    city: "city"
+    state: "state"
+    zip: zip
+    email: "email@example.com"
+  }) {
+    user {
+      id
+      name
+      address
+      city
+      state
+      zip
+      email
+    }
+  } 
+}
+```
+
+```
+
 
 ### Trip Requests
 
@@ -220,6 +259,24 @@ mutation{
     emergencyContact{
       name
       phone
+    }
+  }
+}
+```
+### Contact Requests
+
+**Single User + Emergency Contacts:**
+```
+{
+  user(id: 1){
+    id
+    name
+    email
+    emergencyContacts{
+      id
+      name
+      phone
+      email
     }
   }
 }
