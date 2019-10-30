@@ -122,4 +122,24 @@ describe "User Emergency Contacts" do
     post "/graphql", params: { "query" => mutation }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
     expect(TripContact.last).to eq(nil)
   end
+
+  it "removes a contact" do
+
+    query = (
+      %(mutation {
+          removeContact( input: {
+            id: #{@contact_1.id}
+            }){
+          clientMutationId
+          }
+        })
+      )
+
+    post "/graphql", params: { "query" => query }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+
+    JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to be_successful
+    expect(@user.emergency_contacts.length).to eq(1)
+  end
 end
