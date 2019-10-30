@@ -19,6 +19,16 @@
 ### Introduction
 This API serves as the back-end for Beacon, a search and rescue app.  Built with Ruby on Rails and GraphQL.
 
+Knowing that out in the wilderness people often don't have access to cell phone reception, Beacon seeks to give adventurers the option of going into the unknown a bit more prepared. With this app users can prefill information about their trip with as much detail as they desire.
+
+Users can enter personal information, what vehicle they are driving, information about the trip they are going on, and tell the app what gear they are taking along.
+
+The user selects a start and end time for their trip, and then selects a notification date and time in case they don't make it back. If the user doesn't check in with the app before the notification time is up, their emergency contact/s associated with the trip will receive an email with helpful information for Search and Rescue.
+
+The email will consist of the user's trip information: where they were planning on starting and ending their adventure, along with the vehicle driven and its details. The email will also list info about the user that would help a search and rescue team know who they are looking for. A user can enter what gear they brought along (such as how much food and water, any medications, an avalanche beacon, a down sleeping bag...) And lastly, the email will have contact info for search and rescue teams nearby to where the user went missing.
+
+A custom Search and Rescue API for the state of Colorado was built for this app.
+
 ### Setup
 To setup locally, run the following commands:
  - `git clone https://github.com/Search-and-Rescue/search_and_rescue_api.git`
