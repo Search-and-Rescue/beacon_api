@@ -12,7 +12,7 @@
 * [Search and Rescue Team Requests](#Search-and-Rescue-Team-Requests)
 * [Schema Diagram](#Schema-Diagram)
 * [Project Board](#Project-Board)
-* [Tech Stack](#Tech Stack)
+* [Tech Stack](#Tech-Stack)
 * [Beacon Development Team](#Beacon-Development-Team)
 * [Front-End Repo](#Front-End-Repo)
 
