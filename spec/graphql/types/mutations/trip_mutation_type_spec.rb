@@ -59,6 +59,27 @@ RSpec.describe Types::QueryType do
       expect(trip.active).to eq(false)
     end
 
+    it "can end a trip SAD path" do
+      trip = create(:trip)
+
+      mutation = (
+        %(mutation{
+          endTrip(input: {
+
+          }) {
+            trip{
+              name
+              active
+            }
+          }
+        })
+      )
+
+      results = SearchAndRescueApiSchema.execute(mutation).as_json['errors']
+
+      expect(results[0]["message"]).to eq("Argument 'id' on InputObject 'EndTripInput' is required. Expected type ID!")
+    end
+
     it "should add a vehicle to a trip" do
       trip = create(:trip)
       vehicle = create(:vehicle)
