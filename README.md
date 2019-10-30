@@ -1,4 +1,4 @@
-## Search and Rescue API
+# Search and Rescue API
 
 ## Table of Contents
 * [Introduction](#Introduction)
