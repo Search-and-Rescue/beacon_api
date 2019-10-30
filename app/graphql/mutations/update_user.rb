@@ -12,7 +12,7 @@ class Mutations::UpdateUser < Mutations::BaseMutation
   argument :experience_level, Integer, required: false
   argument :birth_date, String, required: false
   argument :weight, Integer, required: false
-  argument :height, String, required: false
+  argument :height, Integer, required: false
   argument :hair_color, String, required: false
   argument :skin_color, String, required: false
   argument :gender, String, required: false
