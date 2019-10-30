@@ -142,4 +142,23 @@ describe "User Emergency Contacts" do
     expect(response).to be_successful
     expect(@user.emergency_contacts.length).to eq(1)
   end
+
+  it "does not add a contact to a trip if missing info" do
+    mutation = (
+      %(mutation{
+        addContactToTrip(input: {
+          tripId: #{@trip.id}
+        }) {
+          clientMutationId
+        }
+      })
+    )
+
+    post "/graphql", params: { "query" => mutation }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+
+    results = JSON.parse(response.body, symbolize_names: true)[:errors]
+
+    expect(response).to be_successful
+    expect(results[0][:message]).to eq("Argument 'emergencyContactId' on InputObject 'AddContactToTripInput' is required. Expected type ID!")
+  end
 end
