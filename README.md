@@ -549,9 +549,9 @@ query {
 * Ruby 2.4.9
 * GraphQL
 * PostgreSQL database
-* Sinatra to host a micro-service API that manages a Sendgrid emailing service
+* Sinatra to host a micro-service API that manages a SendGrid emailing service
 
-[View the Sinatra microservice's repo here](https://github.com/link_goes_here)
+[View the Sinatra microservice's repo here](https://github.com/Search-and-Rescue/beacon_email_service)
 
 ### Contributors
 
