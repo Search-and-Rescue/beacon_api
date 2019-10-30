@@ -12,7 +12,7 @@
 * [Search and Rescue Team Requests](#Search-and-Rescue-Team-Requests)
 * [Schema Diagram](#Schema-Diagram)
 * [Project Board](#Project-Board)
-* [Built Using](#Built-Using)
+* [Tech Stack](#Tech Stack)
 * [Beacon Development Team](#Beacon-Development-Team)
 * [Front-End Repo](#Front-End-Repo)
 
@@ -560,7 +560,7 @@ query {
 
 [Click here to see the Beacon Project Board](https://github.com/orgs/Search-and-Rescue/projects/1)
 
-### Built Using
+### Tech Stack
 
 * Rails 5.2.3
 * Ruby 2.4.9
