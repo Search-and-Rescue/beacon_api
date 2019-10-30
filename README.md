@@ -62,7 +62,7 @@ mutation {
       zip
       email
     }
-  } 
+  }
 }
 ```
 
@@ -87,7 +87,7 @@ mutation {
       zip
       email
     }
-  } 
+  }
 }
 ```
 
@@ -102,7 +102,7 @@ query {
       name
       travelingCompanions
       }
-    } 
+    }
   }
 }  
 
@@ -153,7 +153,7 @@ mutation {
       travelingCompanions
     }
   }
-} 
+}
 ```
 
 **Update Trip**
@@ -186,7 +186,7 @@ mutation {
       travelingCompanions
     }
   }
-} 
+}
 ```
 
 **Remove a Trip**
@@ -262,7 +262,7 @@ mutation {
 ```
 ### Emergency Contact Requests
 
-**Single User + Emergency Contacts:**
+**All Emergency Contacts for a User:**
 ```
 query {
   user(id: 1){
@@ -358,7 +358,7 @@ query {
       color
       licensePlate
       }
-    } 
+    }
   }
 }
 ```
@@ -394,7 +394,7 @@ mutation {
       color
       licensePlate
     }
-  } 
+  }
 }
 ```
 
@@ -417,7 +417,7 @@ mutation {
       color
       licensePlate
     }
-  } 
+  }
 }
 ```
 
@@ -448,7 +448,7 @@ query {
       id
       itemName
       }
-    } 
+    }
   }
 }
 ```
@@ -472,7 +472,7 @@ mutation {
       id
       itemName
     }
-  } 
+  }
 }
 ```
 
@@ -487,7 +487,7 @@ mutation {
       id
       itemName
     }
-  } 
+  }
 }
 ```
 
@@ -533,7 +533,26 @@ query {
 }
 ```
 
+### Schema Diagram
+(For additional information in your queries and mutations)
+
+![Beacon Schema](/schema_diagram.png?raw=true "Beacon Schema")
 
 
+### Project Board
 
+[Click here to see the Beacon Project Board](https://github.com/orgs/Search-and-Rescue/projects/1)
 
+### Built Using
+
+* Rails 5.2.3
+* Ruby 2.4.9
+* PostgreSQL database
+* Sinatra to host a micro-service API that manages a Sendgrid emailing service
+
+[View the Sinatra microservice's repo here](https://github.com/link_goes_here)
+
+### Contributors
+
+- [Tyler Bierwirth](https://github.com/tbierwirth)
+- [Jori Peterson](https://github.com/JoriPeterson)
