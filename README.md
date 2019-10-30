@@ -566,6 +566,7 @@ query {
 * Ruby 2.4.9
 * GraphQL
 * Google Places API
+* TravisCI
 * PostgreSQL database
 * Sinatra to host a micro-service API that manages a SendGrid emailing service
 
