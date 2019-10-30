@@ -1,6 +1,23 @@
 ## Search and Rescue API
+
+## Table of Contents
+* [Introduction](#Introduction)
+* [Setup](#Setup)
+* [GraphQL Endpoint](#Endpoint)
+* [User Requests](#User-Requests)
+* [Trip Requests](#Trip-Requests)
+* [Emergency Contact Requests](#Emergency-Contact-Requests)
+* [Vehicle Requests](#Vehicle-Requests)
+* [Gear Requests](#Gear-Requests)
+* [Search and Rescue Team Requests](#Search-and-Rescue-Team-Requests)
+* [Schema Diagram](#Schema-Diagram)
+* [Project Board](#Project-Board)
+* [Built Using](#Built-Using)
+* [Beacon Development Team](#Beacon-Development-Team)
+* [Front-End Repo](#Front-End-Repo)
+
 ### Introduction
-This API servers as the backend for Beacon, a search and rescue app.  Built with Ruby on Rails and GraphQL.
+This API serves as the back-end for Beacon, a search and rescue app.  Built with Ruby on Rails and GraphQL.
 
 ### Setup
 To setup locally, run the following commands:
@@ -503,7 +520,7 @@ mutation {
 }
 ```
 
-### Search and Rescue Teams
+### Search and Rescue Team Requests
 
 **Get All Teams:
 ```
@@ -553,7 +570,14 @@ query {
 
 [View the Sinatra microservice's repo here](https://github.com/Search-and-Rescue/beacon_email_service)
 
-### Contributors
+### Beacon Development Team
 
 - [Tyler Bierwirth](https://github.com/tbierwirth)
 - [Jori Peterson](https://github.com/JoriPeterson)
+- [Katherine Williams](https://github.com/kawilliams8)
+- [Samatha Freeman](https://github.com/SamanthaLFreeman)
+
+### Front-End Repo
+
+[View Beacon's Front-End Repo Here to see the app in action!](https://github.com/Search-and-Rescue/SearchAndRescue-FE)
+
