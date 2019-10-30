@@ -59,27 +59,6 @@ RSpec.describe Types::QueryType do
       expect(trip.active).to eq(false)
     end
 
-    it "can end a trip SAD path" do
-      trip = create(:trip)
-
-      mutation = (
-        %(mutation{
-          endTrip(input: {
-
-          }) {
-            trip{
-              name
-              active
-            }
-          }
-        })
-      )
-
-      results = SearchAndRescueApiSchema.execute(mutation).as_json['errors']
-
-      expect(results[0]["message"]).to eq("Argument 'id' on InputObject 'EndTripInput' is required. Expected type ID!")
-    end
-
     it "should add a vehicle to a trip" do
       trip = create(:trip)
       vehicle = create(:vehicle)
@@ -123,31 +102,6 @@ RSpec.describe Types::QueryType do
       results = SearchAndRescueApiSchema.execute(mutation).as_json['data']['removeTrip']
       expect(results['trip']['name']).to eq(trip.name)
       expect(Trip.exists?(trip.id)).to eq(false)
-    end
-
-    it "shouldn't add a vehicle to a trip SAD" do
-      trip = create(:trip)
-      vehicle = create(:vehicle)
-      mutation = (
-        %(mutation{
-        addVehicleToTrip(input: {
-          vehicleId: #{vehicle.id}
-          }) {
-            trip{
-              id
-              name
-            }
-            vehicle{
-              id
-              make
-              model
-            }
-          }
-        })
-      )
-      results = SearchAndRescueApiSchema.execute(mutation).as_json['errors']
-
-      expect(results[0]['message']).to eq("Argument 'tripId' on InputObject 'AddVehicleToTripInput' is required. Expected type ID!")
     end
   end
 end

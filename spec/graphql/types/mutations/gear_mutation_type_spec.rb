@@ -68,26 +68,5 @@ RSpec.describe Types::QueryType do
 
       expect(user.gear.length).to eq(0)
     end
-
-    it "should create a piece of gear" do
-      user = create(:user)
-
-      mutation = (
-        %(mutation {
-          createGear(input: {
-            itemName: "JetBoil",
-            description: "It gets hot",
-          }){
-            gear {
-              itemName
-            }
-          }
-        })
-      )
-
-      results = SearchAndRescueApiSchema.execute(mutation).as_json['errors']
-
-      expect(results[0]['message']).to eq("Argument 'userId' on InputObject 'CreateGearInput' is required. Expected type ID!")
-    end
   end
 end
