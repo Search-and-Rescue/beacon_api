@@ -2,11 +2,11 @@ language: ruby
 deploy:
   provider: heroku
   api_key:
-    secure: moVLGjp2p6d4dXYuSrHksRqFtG2pnE/MoAJG3CCK/xjKsWtEd8uSM8g/N5qT4UIIu+d0bXSJ/qFj6kd2Xf4ZT/jYjGUjIhVjvXnT2ilY25SllVCW5Oj9pdZtRgEcZaDf77GbS6sQqNGao/oqzVZRAf7BZkzueppUAOdFmIiLRMm7pE7lVf0RHIa0LiK3e36vegSDG9Svy6tpjPyj+J8ssqLvNU5p07j6u24UwAGQmpqQr0dXGQDbxhIPHu/8dYyB1U+fGP863Bed7lW/omYrrxBe8wM4O4gpiMxsdvsyYRyIUE3h/AYTA6FKP9dlPDbKe8CORt1Pf0cyP9iuBia8Lmp9ta+CtY/kXmcfqlTK7pqkzRbYGBTk8x31+uyNfg9fsX7ouF/g+vm/Z065U4ftwp1qQVfvMgc+zJDaHqG3i3N+bwsXFSr46dpGYU/vJRJRdwCNSg8XpmZvCEGF/KliuvVhvt7IH5+tkgjnYli15br7RnL3xe538K3M5qyuKv+nOiB6FvvF9gUzsb3oOPgTwuNfopq5i/1S+SMlCk5ce/JoT7SXQEUliIK+cOGgj/gFdr/w1G6iJUQEzzNJXRbiRwI4itEwe0uCIQiaVKE2gOep+0YLskck4RrQj/kli25dxLx/csmKtTnkDEEcuz4u0dNQDIaXk9FI06YvgWL/ytc=
+    secure: OhE+zVLkvzPFQvQqKlmPVN5GepoFreVPSNR+blLf4Yga6pTy/HMkrOWPediRdTTrz0jzFuGlZQs4egzg6COaOPov8Zvtmm8wLti9qul5g0VXwHw+kMx9+OWXS/LHttY1noQNtD8fFSFWavP0x/OQzvJK4JToRBPqnbYcIae+0AQyd3WqncmrQYAjKhyyhXKKJRQIh6Rp0kcdgbV9U4UQqv86802hy2aPG9cKTip7DAnyOAPFCGZSIQjJHrOfrxwfgW03iJWytkp8YqZ4iNzKu/4u60rgLi8X5ImqYbM8G86l9yYj1g9JDBQm5otb2BSrvjG46Mhzjw6HfgZ2tA+sN1ItLv/FN49btSi39j6eHqsXIL2SCk04GMcFDhNLzupumog6b6YwT1m4JRxXKtrkXlaBYBOWFI/RPsuKhWURf+ibcgK7iBkzGDA6/4k73s3BWPDQmpSZdTgm6LpbyeUfWgUpO0mvcFSWRyMvQHwbw8Grr0wDpSMZbpiftlJ+Ef0JBZ/NQlwxO4vwwi+rHNkO3d5DaTNYuS+Z8hu8v9UMb89mk/Dd1CLO0XhOJvPSNuU6LSQMaccMnKaavQA0DzfJsx2spNmx9z6UsgbeU1aglLo9lLzkVp7kZaaDr9D9ReZ+zB4ch79VJOJMVNUzSDaPoowDx5p0q+OOUlfiLc4NteY=
   app: search-and-rescue-api
 services:
-  - postgresql
+- postgresql
 script:
-  - bundle exec rails db:create
-  - bundle exec rails db:migrate RAILS_ENV=test
-  - bundle exec rspec
+- bundle exec rails db:create
+- bundle exec rails db:migrate RAILS_ENV=test
+- bundle exec rspec
