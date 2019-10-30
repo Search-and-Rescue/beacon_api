@@ -18,6 +18,7 @@ module Types
     field :trip_gears, [Types::TripGearType], null: true
     field :gears, [Types::GearType], null: true
     field :emergency_contacts, [Types::EmergencyContactType], null: true
+    field :vehicle, Types::VehicleType, null: true
     field :nearby_sar_teams, [Types::SearchAndRescueType], null: true
 
     def nearby_sar_teams
@@ -25,6 +26,10 @@ module Types
       lat = coordinates[:lat]
       lng = coordinates[:lng]
       SearchAndRescue.near([lat, lng], 30)
+    end
+
+    def vehicle
+      Vehicle.find(object.vehicle_id)
     end
   end
 end
