@@ -11,8 +11,8 @@
 * [Gear Requests](#Gear-Requests)
 * [Search and Rescue Team Requests](#Search-and-Rescue-Team-Requests)
 * [Schema Diagram](#Schema-Diagram)
-* [Project Board](#Project-Board)
 * [Tech Stack](#Tech-Stack)
+* [Project Board](#Project-Board)
 * [Beacon Development Team](#Beacon-Development-Team)
 * [Front-End Repo](#Front-End-Repo)
 
@@ -556,10 +556,6 @@ query {
 ![Beacon Schema](/schema_diagram.png?raw=true "Beacon Schema")
 
 
-### Project Board
-
-[Click here to see the Beacon Project Board](https://github.com/orgs/Search-and-Rescue/projects/1)
-
 ### Tech Stack
 
 * Rails 5.2.3
@@ -571,6 +567,10 @@ query {
 * Sinatra to host a micro-service API that manages a SendGrid emailing service
 
 [View the Sinatra microservice's repo here](https://github.com/Search-and-Rescue/beacon_email_service)
+
+### Project Board
+
+[Click here to see the Beacon Project Board](https://github.com/orgs/Search-and-Rescue/projects/1)
 
 ### Beacon Development Team
 
