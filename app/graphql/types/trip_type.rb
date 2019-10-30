@@ -29,7 +29,9 @@ module Types
     end
 
     def vehicle
-      Vehicle.find(object.vehicle_id)
+      unless object.vehicle_id == nil
+        Vehicle.find(object.vehicle_id)
+      end
     end
   end
 end
