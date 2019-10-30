@@ -547,6 +547,7 @@ query {
 
 * Rails 5.2.3
 * Ruby 2.4.9
+* GraphQL
 * PostgreSQL database
 * Sinatra to host a micro-service API that manages a Sendgrid emailing service
 
