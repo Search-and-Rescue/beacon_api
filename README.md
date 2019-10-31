@@ -1,4 +1,4 @@
-# Search and Rescue API
+# Beacon API
 
 ## Table of Contents
 * [Introduction](#Introduction)
@@ -19,7 +19,7 @@
 ### Introduction
 This API serves as the back-end for Beacon, a search and rescue app.  Built with Ruby on Rails and GraphQL.
 
-Knowing that out in the wilderness people often don't have access to cell phone reception, Beacon seeks to give adventurers the option of going into the unknown a bit more prepared. With this app users can prefill information about their trip with as much detail as they desire.
+Knowing that out in the wilderness people often don't have access to cell phone reception, Beacon seeks to give adventurers the option of going into the unknown a bit more prepared. With this app users can pre-fill information about their trip with as much detail as they desire.
 
 Users can enter personal information, what vehicle they are driving, information about the trip they are going on, and tell the app what gear they are taking along.
 
