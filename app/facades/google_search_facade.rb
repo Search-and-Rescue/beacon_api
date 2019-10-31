@@ -5,6 +5,8 @@ class GoogleSearchFacade
 
   def coordinates
     response = GoogleService.new.coordinates(@starting_point)
-    response[:candidates][0][:geometry][:location]
+    unless response[:status] == "ZERO_RESULTS"
+      response[:candidates][0][:geometry][:location]
+    end
   end
 end
