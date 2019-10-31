@@ -587,7 +587,7 @@ query {
 - [Tyler Bierwirth](https://github.com/tbierwirth)
 - [Jori Peterson](https://github.com/JoriPeterson)
 - [Katherine Williams](https://github.com/kawilliams8)
-- [Samatha Freeman](https://github.com/SamanthaLFreeman)
+- [Samantha Freeman](https://github.com/SamanthaLFreeman)
 
 ### Front-End Repo
 
