@@ -23,9 +23,11 @@ module Types
 
     def nearby_sar_teams
       coordinates = GoogleSearchFacade.new(object.starting_point).coordinates
-      lat = coordinates[:lat]
-      lng = coordinates[:lng]
-      SearchAndRescue.near([lat, lng], 30)
+      unless coordinates == nil
+        lat = coordinates[:lat]
+        lng = coordinates[:lng]
+        SearchAndRescue.near([lat, lng], 30)
+      end
     end
 
     def vehicle
