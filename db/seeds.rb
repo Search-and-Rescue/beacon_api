@@ -5,6 +5,71 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# 'Real' Data
+user_1 = User.create(
+  name: "Bear Grylls",
+  address: "14153 E Montana St",
+  city: "Denver",
+  state: "CO",
+  zip: 80209,
+  phone: Faker::PhoneNumber.unique.cell_phone,
+  email: "bear_grylls@gmail.com",
+  password_digest: Faker::Alphanumeric.unique.alphanumeric(number: 30),
+  allergies: "Avocado",
+  experience_level: 2,
+  birth_date: Faker::Date.between(from: 60.years.ago, to: 18.years.ago),
+  weight: 165,
+  height: "5ft 11in",
+  hair_color: "Brown",
+  skin_color: Faker::Color.color_name,
+  gender: Faker::Color.color_name,
+  cosar_card: Faker::Boolean.boolean
+)
+EmergencyContact.create(
+  name: "Tyler Bierwirth",
+  phone: Faker::PhoneNumber.unique.cell_phone,
+  email: "tylerbierwirth@gmail.com",
+  user_id: user_1.id
+)
+vehicle = Vehicle.create(
+  make: Faker::Vehicle.make,
+  model: Faker::Vehicle.model,
+  year: Faker::Vehicle.year,
+  color: Faker::Vehicle.color,
+  state: Faker::Address.state_abbr,
+  license_plate: Faker::Vehicle.license_plate,
+  user_id: user_1.id
+)
+real_trip = Trip.create(
+  name: "4 Pass Loop",
+  activity_type: "Hiking",
+  starting_point: "Maroon Snowmass Trailhead",
+  ending_point: "Maroon Snowmass Trailhead",
+  start_date: Date.current - 1.day,
+  start_time: Time.current - 12.hours,
+  end_date: Date.current,
+  end_time: Time.current - 6.hours,
+  notification_date: Date.current,
+  notification_time: Time.current - 2.hours,
+  traveling_companions: 0,
+  user_id: user_1.id,
+  vehicle_id: vehicle.id,
+  active: true
+)
+10.times do
+  item = Gear.create(
+    item_name: Faker::Commerce.product_name,
+    description: Faker::ChuckNorris.fact,
+    user_id: user_1.id
+  )
+  TripGear.create(
+    trip_id: real_trip.id,
+    gear_id: item.id,
+    comments: Faker::ChuckNorris.fact
+  )
+end
+
+# 'Fake' Data
 20.times do
   name = Faker::Name.unique.name
   user = User.create(
