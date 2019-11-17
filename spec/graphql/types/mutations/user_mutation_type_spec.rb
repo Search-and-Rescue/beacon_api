@@ -8,6 +8,7 @@ RSpec.describe Types::QueryType do
           createUser(input: {
             name: "Tyler",
             email: "tyler@gmail.com",
+            password: "password",
             address: "123 Rocky Rd",
             city: "Denver",
             state: "CO",
