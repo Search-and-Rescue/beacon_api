@@ -32,6 +32,7 @@ describe "User Profile" do
       %(mutation {
         createUser(input: {
           name: "Tyler",
+          password: "password",
           email: "tyler@gmail.com",
           address: "123 Rocky Rd",
           city: "Denver",
@@ -50,7 +51,6 @@ describe "User Profile" do
     post "/graphql", params: { "query" => mutation }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
 
     profile = JSON.parse(response.body, symbolize_names: true)[:data][:createUser][:user]
-
     expect(response).to be_successful
     expect(profile[:id].to_i).to eq(User.last.id)
     expect(profile[:name]).to eq("Tyler")
