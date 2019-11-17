@@ -34,6 +34,7 @@ To setup locally, run the following commands:
  - `git clone https://github.com/Search-and-Rescue/search_and_rescue_api.git`
  - `cd search_and_rescue_api`
  - `bundle install`
+ - `rails db:{create,migrate,seed}`
  - `bundle exec rake import`
  - `rails s`
  - Navigate to `localhost:3000/graphiql` to view the GraphiQL, an in-browser IDE for exploring the API
@@ -560,6 +561,10 @@ query {
 }
 ```
 
+### Testing
+* To run the testing suite, type `rspec` into your command line.
+* To open the coverage report, type `open coverage/index.html` into the CLI.
+
 ### Schema Diagram
 (For additional information in your queries and mutations)
 
@@ -576,7 +581,7 @@ query {
 * PostgreSQL database
 * Sinatra to host a micro-service API that manages a SendGrid emailing service
 
-[View the Sinatra microservice's repo here](https://github.com/Search-and-Rescue/beacon_email_service)
+[View the Sinatra micro-service's repo here](https://github.com/Search-and-Rescue/beacon_email_service)
 
 ### Project Board
 
@@ -592,4 +597,3 @@ query {
 ### Front-End Repo
 
 [View Beacon's Front-End Repo Here to see the app in action!](https://github.com/Search-and-Rescue/SearchAndRescue-FE)
-
