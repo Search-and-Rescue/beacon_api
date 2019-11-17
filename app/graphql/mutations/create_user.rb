@@ -1,12 +1,12 @@
 class Mutations::CreateUser < Mutations::BaseMutation
   argument :name, String, required: true
   argument :email, String, required: true
+  argument :password, String, required: true
   argument :address, String, required: false
   argument :city, String, required: false
   argument :state, String, required: false
   argument :zip, Integer, required: false
   argument :phone, String, required: false
-  argument :password_digest, String, required: false
   argument :allergies, String, required: false
   argument :birth_date, String, required: false
   argument :weight, Integer, required: false
