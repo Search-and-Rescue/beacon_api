@@ -60,5 +60,37 @@ RSpec.describe Types::QueryType do
       expect(response['tripGear']['gear']['itemName']).to eq(gear.item_name)
       expect(TripGear.where(trip_id: trip.id, gear_id: gear.id).first).to eq(nil)
     end
+
+    it "shouldn't add gear from to a trip if missing info" do
+      user = create(:user)
+      trip = create(:trip, user_id: user.id)
+      gear = create(:gear, user_id: user.id)
+      trip_gear = TripGear.create(
+        comments: "Test",
+        trip_id: trip.id,
+        gear_id: gear.id
+      )
+
+      mutation = (
+        %(mutation{
+          addGearToTrip(input: {
+            tripId: #{trip.id}
+            comments: "This is a test"
+          }) {
+            tripGear{
+              comments
+              gear{
+                itemName
+              }
+              trip{
+                name
+              }
+            }
+          }
+        })
+      )
+      response = SearchAndRescueApiSchema.execute(mutation).as_json["errors"]
+      expect(response[0]["message"]).to eq("Argument 'gearId' on InputObject 'AddGearToTripInput' is required. Expected type ID!")
+    end
   end
 end
