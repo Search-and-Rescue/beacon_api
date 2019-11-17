@@ -61,5 +61,22 @@ RSpec.describe Types::QueryType do
       SearchAndRescueApiSchema.execute(mutation).as_json
       expect(user.emergency_contacts.length).to eq(0)
     end
+
+    it "should not remove a contact if missing info" do
+      user = create(:user)
+      contact = create(:emergency_contact, user_id: user.id)
+      mutation = (
+        %(mutation{
+          removeContact(input: {
+            id:
+          }) {
+            clientMutationId
+          }
+        })
+      )
+
+      response = SearchAndRescueApiSchema.execute(mutation).as_json["errors"]
+      expect(response[0]["message"]).to eq("Argument 'id' on InputObject 'RemoveContactInput' has an invalid value. Expected type 'Int!'.")
+    end
   end
 end

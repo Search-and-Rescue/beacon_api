@@ -46,5 +46,27 @@ RSpec.describe Types::QueryType do
       trip_contact = TripContact.last
       expect(trip_contact).to be(nil)
     end
+
+    it "should not remove a contact from a trip if missing info" do
+      user = create(:user)
+      contact = create(:emergency_contact, user_id: user.id)
+      trip = create(:trip, user_id: user.id)
+      TripContact.create(
+        emergency_contact_id: contact.id,
+        trip_id: trip.id
+      )
+      mutation = (
+        %(mutation{
+          removeContactFromTrip(input: {
+            emergencyContactId: #{contact.id}
+          }) {
+            clientMutationId
+          }
+        })
+      )
+
+      response = SearchAndRescueApiSchema.execute(mutation).as_json["errors"]
+      expect(response[0]["message"]).to eq("Argument 'tripId' on InputObject 'RemoveContactFromTripInput' is required. Expected type ID!")
+    end
   end
 end

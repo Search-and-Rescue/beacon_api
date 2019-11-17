@@ -67,5 +67,43 @@ RSpec.describe Types::QueryType do
       expect(results[0]['name']).to eq(trip.name)
       expect(results[0]['user']['name']).to eq(user.name)
     end
+
+    it "should return a single trip and its vehicle" do
+      trip_1 = create(:trip, name: "trip_1")
+      vehicle = create(:vehicle, make: "dodge")
+      query = (
+        %(query {
+          trip(id: #{trip_1.id}) {
+            name
+          }
+          vehicle(id: #{vehicle.id}) {
+            make
+            model
+          }
+        })
+      )
+      trip = SearchAndRescueApiSchema.execute(query).as_json['data']
+      expect(trip['trip']['name']).to eq(trip_1.name)
+      expect(trip['vehicle']['make']).to eq(vehicle.make)
+    end
+
+    it "should return a single trip but no vehicle if vehicle id is nil" do
+      trip_1 = create(:trip, name: "trip_1")
+      vehicle = create(:vehicle, id: nil, make: "dodge")
+
+      query = (
+        %(query {
+          trip(id: #{trip_1.id}) {
+            name
+          }
+          vehicle(id: #{vehicle.id}) {
+            make
+            model
+          }
+        })
+      )
+      trip = SearchAndRescueApiSchema.execute(query).as_json['data']
+      expect(trip['trip']['name']).to eq(trip_1.name)
+    end
   end
 end
