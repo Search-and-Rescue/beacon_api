@@ -14,12 +14,16 @@ RSpec.describe Types::MutationType do
             password: "password"
           }) {
             token
+            user {
+              id
+            }
           }
         })
       )
 
       result = SearchAndRescueApiSchema.execute(mutation).as_json['data']['signInUser']
       expect(result["token"].present?).to be(true)
+      expect(result["user"]["id"].to_i).to be(@user.id)
     end
   end
 end
