@@ -6,7 +6,7 @@ describe "User's Trips'" do
     @trip_1 = create(:trip, name: "trip 1", user_id: @user.id)
     @trip_2 = create(:trip, name: "trip 2", user_id: @user.id)
 
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+    allow_any_instance_of(GraphqlController).to receive(:current_user).and_return(@user)
   end
 
   it "returns a user's trips" do

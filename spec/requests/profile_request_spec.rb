@@ -4,7 +4,7 @@ describe "User Profile" do
   before :each do
     @user = create(:user)
 
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+    allow_any_instance_of(GraphqlController).to receive(:current_user).and_return(@user)
   end
 
   it "returns a user's profile" do

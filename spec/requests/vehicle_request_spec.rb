@@ -6,7 +6,7 @@ describe "User's Vehicles" do
     @vehicle_1 = create(:vehicle, user_id: @user.id)
     @vehicle_2 = create(:vehicle, user_id: @user.id)
 
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+    allow_any_instance_of(GraphqlController).to receive(:current_user).and_return(@user)
   end
 
   it "returns a user's vehicles" do
