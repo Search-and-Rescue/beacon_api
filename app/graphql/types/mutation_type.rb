@@ -20,5 +20,6 @@ module Types
     field :createGear, mutation: Mutations::CreateGear
     field :updateGear, mutation: Mutations::UpdateGear
     field :removeGear, mutation: Mutations::RemoveGear
+    field :signInUser, mutation: Mutations::SignInUser
   end
 end
