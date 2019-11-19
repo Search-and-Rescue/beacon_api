@@ -1,11 +1,13 @@
 class Mutations::SignInUser < Mutations::BaseMutation
-  argument :email, String, required: true
-  argument :password, String, required: true
+  null true
+
+  argument :email, String, required: false
+  argument :password, String, required: false
 
   field :token, String, null: true
   field :user, Types::UserType, null: true
 
-  def resolve(email:, password:)
+  def resolve(email: nil, password: nil)
     user = User.find_by(email: email)
 
     return {error: "Email or password is incorrect" } unless user
